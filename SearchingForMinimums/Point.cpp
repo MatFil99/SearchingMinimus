@@ -24,5 +24,6 @@ std::ostream& operator<<(std::ostream& os, const Point& dt)
     for( int i =0; i<vect.getSize(); i++){
 
     }
-    return
+    os << " ";
+    return os;
 }
