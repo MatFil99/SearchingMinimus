@@ -9,17 +9,25 @@ private:
 public:
     VectorN(int n);
 
+    VectorN(int n, double * vec);
+
+    VectorN( const VectorN & vectN );
+
     ~VectorN();
 
     double * getTab();
 
     void setNVal(int n, double val);
 
-    double getNVal(int n);
+    double getNVal(int n) const;
 
-    int getSize();
+    int getSize() const;
 
-    double getNorm()l
+    double getNorm();
+
+    bool operator ==( const VectorN & v );
+
+    bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
 
 };
 

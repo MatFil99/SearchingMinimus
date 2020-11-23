@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jakub/CLionProjects/SearchingForMinimums/Function.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/Gradient.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/Point.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Point.cpp.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/VectorN.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/fparser4.5.2/fparser.cc" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fparser.cc.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/fparser4.5.2/fpoptimizer.cc" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/main.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/main.cpp.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Function.cpp" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Gradient.cpp" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/MinimumsList.cpp" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.cpp" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Point.cpp.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.cpp" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.cc" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fparser.cc.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpoptimizer.cc" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o"
+  "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/main.cpp" "/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
