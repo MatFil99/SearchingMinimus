@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <string>
+#include "TestPoint.h"
 
 int main()
 {
-    std::string function;
+   /* std::string function;
     double minx, maxx, step;
     FunctionParser fparser;
 
@@ -28,7 +29,10 @@ int main()
     {
         std::cout << "f(" << vals[0] << ") = " << fparser.Eval(vals)
                   << std::endl;
-    }
+    }*/
+
+    TestPoint t;
+    t.testujPunkt();
 
     return 0;
 }

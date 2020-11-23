@@ -3,7 +3,6 @@
 
 CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: ../Function.cpp
 CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: ../Function.h
-CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: ../Gradient.h
 CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: ../VectorN.h
 CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: ../fparser4.5.2/fparser.hh
 
@@ -21,6 +20,11 @@ CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o: ../VectorN.h
 CMakeFiles/SearchingForMinimums.dir/Point.cpp.o: ../Point.cpp
 CMakeFiles/SearchingForMinimums.dir/Point.cpp.o: ../Point.h
 CMakeFiles/SearchingForMinimums.dir/Point.cpp.o: ../VectorN.h
+
+CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o: ../Point.h
+CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o: ../TestPoint.cpp
+CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o: ../TestPoint.h
+CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o: ../VectorN.h
 
 CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o: ../VectorN.cpp
 CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o: ../VectorN.h
@@ -40,6 +44,9 @@ CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o: ../fparser4.5
 CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o: ../fparser4.5.2/fpconfig.hh
 CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o: ../fparser4.5.2/fpoptimizer.cc
 
+CMakeFiles/SearchingForMinimums.dir/main.cpp.o: ../Point.h
+CMakeFiles/SearchingForMinimums.dir/main.cpp.o: ../TestPoint.h
+CMakeFiles/SearchingForMinimums.dir/main.cpp.o: ../VectorN.h
 CMakeFiles/SearchingForMinimums.dir/main.cpp.o: ../fparser4.5.2/fparser.hh
 CMakeFiles/SearchingForMinimums.dir/main.cpp.o: ../main.cpp
 

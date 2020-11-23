@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o"
   "CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o"
   "CMakeFiles/SearchingForMinimums.dir/Point.cpp.o"
+  "CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o"
   "CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o"
   "CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fparser.cc.o"
   "CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o"

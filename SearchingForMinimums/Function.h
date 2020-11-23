@@ -3,12 +3,11 @@
 
 
 #include "fparser4.5.2/fparser.hh"
-#include "Gradient.h"
+#include "VectorN.h"
 
 class Function {
     int varNum;
     FunctionParser parser;
-    Gradient gradient;
 
 public:
     Function(std::string & f );

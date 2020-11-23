@@ -6,14 +6,10 @@
 #include <iostream>
 
 class Point {
+    Point(VectorN vectorN, double val);
 
-
-
-    VectorN point = VectorN(0);
+    VectorN * point;
     double value;
-
-
-    double getValue()const;
     bool operator==(const Point & point);
 
     Point& operator=(const Point & pPoint);
@@ -21,8 +17,9 @@ class Point {
 public:
     Point( Point *pPoint);
     Point();
-    Point(VectorN &vectorN, double value);
+    Point(VectorN &vectorN, double val);
 
+    double getValue()const;
     VectorN getVectorN()const;
 };
 

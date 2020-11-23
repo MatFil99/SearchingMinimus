@@ -108,6 +108,12 @@
 		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.cpp">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.h">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
 		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>

@@ -4,7 +4,6 @@
 CMakeFiles/SearchingForMinimums.dir/Function.cpp.o
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Function.cpp
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Function.h
- /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Gradient.h
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.h
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.hh
 CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o
@@ -21,6 +20,11 @@ CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o
 CMakeFiles/SearchingForMinimums.dir/Point.cpp.o
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.cpp
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.h
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.h
+CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.h
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.cpp
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.h
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.h
 CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.cpp
@@ -41,5 +45,8 @@ CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpconfig.hh
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpoptimizer.cc
 CMakeFiles/SearchingForMinimums.dir/main.cpp.o
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.h
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.h
+ /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.h
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.hh
  /home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/main.cpp

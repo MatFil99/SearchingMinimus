@@ -3,6 +3,7 @@
 
 VectorN::VectorN(int n) {
     vec = new double [n];
+    size = n;
     for (int i = 0; i < n ; ++i)
         vec[n] = 0;
 }
@@ -60,5 +61,5 @@ bool VectorN::operator==(const VectorN &v) {
 }
 
 bool VectorN::roundEquals(const VectorN & v, int n, double acceptableDeviation) const {
-    return abs(this->getNVal(n) - v.getNVal(n)) < acceptableDeviation; // check if it throw exception?
+    return std::abs(this->getNVal(n) - v.getNVal(n)) < acceptableDeviation; // check if it throw exception?
 }

@@ -5,10 +5,10 @@
 #include "Function.h"
 
 class Gradient {
-    Function function;
+    Function * function;
     int n;
 public:
-    Gradient(Function f);
+    Gradient(Function * f);
     VectorN get(VectorN point, double step);
 };
 

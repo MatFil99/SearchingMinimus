@@ -251,6 +251,33 @@ Point.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Point.cpp.s
 .PHONY : Point.cpp.s
 
+TestPoint.o: TestPoint.cpp.o
+
+.PHONY : TestPoint.o
+
+# target to build an object file
+TestPoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o
+.PHONY : TestPoint.cpp.o
+
+TestPoint.i: TestPoint.cpp.i
+
+.PHONY : TestPoint.i
+
+# target to preprocess a source file
+TestPoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.i
+.PHONY : TestPoint.cpp.i
+
+TestPoint.s: TestPoint.cpp.s
+
+.PHONY : TestPoint.s
+
+# target to generate assembly for a file
+TestPoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.s
+.PHONY : TestPoint.cpp.s
+
 VectorN.o: VectorN.cpp.o
 
 .PHONY : VectorN.o
@@ -380,6 +407,9 @@ help:
 	@echo "... Point.o"
 	@echo "... Point.i"
 	@echo "... Point.s"
+	@echo "... TestPoint.o"
+	@echo "... TestPoint.i"
+	@echo "... TestPoint.s"
 	@echo "... VectorN.o"
 	@echo "... VectorN.i"
 	@echo "... VectorN.s"

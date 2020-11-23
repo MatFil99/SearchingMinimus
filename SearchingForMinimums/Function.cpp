@@ -1,4 +1,4 @@
-#include "Function.h"
+#include "Function.h"11
 
 
 Function::Function(std::string &f) {
@@ -16,5 +16,5 @@ int Function::getVarNum() {
 
 VectorN Function::getGradient(VectorN point) {
     //sprawdzic czy punkt tego samego wymiaru co funkcja
-    return gradient.get();
+//    return gradient.get();
 }
