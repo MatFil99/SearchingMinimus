@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jakub/CLionProjects/SearchingForMinimums/Minimum.h
+VectorN.h
+/home/jakub/CLionProjects/SearchingForMinimums/VectorN.h
+
+/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.cpp
+MinimumsList.h
+/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.h
+VectorN.h
+/home/jakub/CLionProjects/SearchingForMinimums/VectorN.h
+
+/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.h
+Minimum.h
+/home/jakub/CLionProjects/SearchingForMinimums/Minimum.h
+vector
+-
+
+/home/jakub/CLionProjects/SearchingForMinimums/VectorN.h
+
