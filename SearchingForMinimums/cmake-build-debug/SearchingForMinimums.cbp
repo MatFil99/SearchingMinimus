@@ -84,22 +84,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Function.cpp">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
+		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Function.h">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
 		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Gradient.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
 		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Gradient.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Minimum.cpp">
-			<Option target="SearchingForMinimums"/>
-		</Unit>
-		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Minimum.h">
-			<Option target="SearchingForMinimums"/>
-		</Unit>
 		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
 		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.h">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
+		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Point.cpp">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
+		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/Point.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
 		<Unit filename="/home/jakub/CLionProjects/SearchingForMinimums/VectorN.cpp">

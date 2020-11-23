@@ -1,13 +1,15 @@
 #ifndef SEARCHINGFORMINIMUMS_GRADIENT_H
 #define SEARCHINGFORMINIMUMS_GRADIENT_H
 
-#include "fparser4.5.2/fparser.hh"
+#include "VectorN.h"
+#include "Function.h"
 
 class Gradient {
-    Gradient(FunctionParser parser);
-    FunctionParser parser;
-    double * gradient(double * point);
-    double * gradientNorm(double * point);
+    Function function;
+    int n;
+public:
+    Gradient(Function f);
+    VectorN get(VectorN point, double step);
 };
 
 

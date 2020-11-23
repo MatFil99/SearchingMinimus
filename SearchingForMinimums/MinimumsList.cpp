@@ -2,6 +2,6 @@
 
 #include "VectorN.h"
 
-bool *MinimumsList::exists(double *tab) {
+bool MinimumsList::exists(double *tab) {
     //TODO
 }

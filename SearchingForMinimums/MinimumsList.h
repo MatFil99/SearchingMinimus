@@ -1,11 +1,11 @@
 #ifndef SEARCHINGFORMINIMUMS_MINIMUMSLIST_H
 #define SEARCHINGFORMINIMUMS_MINIMUMSLIST_H
 
-#include "Minimum.h"
+#include "Point.h"
 #include <vector>
 
 class MinimumsList {
-    std::vector<Minimum> listMin;
+    std::vector<Point> listMin;
     bool * exists(double * tab);
 };
 

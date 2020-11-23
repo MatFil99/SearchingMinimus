@@ -123,6 +123,33 @@ SearchingForMinimums/fast:
 	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/build
 .PHONY : SearchingForMinimums/fast
 
+Function.o: Function.cpp.o
+
+.PHONY : Function.o
+
+# target to build an object file
+Function.cpp.o:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Function.cpp.o
+.PHONY : Function.cpp.o
+
+Function.i: Function.cpp.i
+
+.PHONY : Function.i
+
+# target to preprocess a source file
+Function.cpp.i:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Function.cpp.i
+.PHONY : Function.cpp.i
+
+Function.s: Function.cpp.s
+
+.PHONY : Function.s
+
+# target to generate assembly for a file
+Function.cpp.s:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Function.cpp.s
+.PHONY : Function.cpp.s
+
 Gradient.o: Gradient.cpp.o
 
 .PHONY : Gradient.o
@@ -150,33 +177,6 @@ Gradient.cpp.s:
 	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.s
 .PHONY : Gradient.cpp.s
 
-Minimum.o: Minimum.cpp.o
-
-.PHONY : Minimum.o
-
-# target to build an object file
-Minimum.cpp.o:
-	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o
-.PHONY : Minimum.cpp.o
-
-Minimum.i: Minimum.cpp.i
-
-.PHONY : Minimum.i
-
-# target to preprocess a source file
-Minimum.cpp.i:
-	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.i
-.PHONY : Minimum.cpp.i
-
-Minimum.s: Minimum.cpp.s
-
-.PHONY : Minimum.s
-
-# target to generate assembly for a file
-Minimum.cpp.s:
-	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.s
-.PHONY : Minimum.cpp.s
-
 MinimumsList.o: MinimumsList.cpp.o
 
 .PHONY : MinimumsList.o
@@ -203,6 +203,33 @@ MinimumsList.s: MinimumsList.cpp.s
 MinimumsList.cpp.s:
 	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.s
 .PHONY : MinimumsList.cpp.s
+
+Point.o: Point.cpp.o
+
+.PHONY : Point.o
+
+# target to build an object file
+Point.cpp.o:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Point.cpp.o
+.PHONY : Point.cpp.o
+
+Point.i: Point.cpp.i
+
+.PHONY : Point.i
+
+# target to preprocess a source file
+Point.cpp.i:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Point.cpp.i
+.PHONY : Point.cpp.i
+
+Point.s: Point.cpp.s
+
+.PHONY : Point.s
+
+# target to generate assembly for a file
+Point.cpp.s:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Point.cpp.s
+.PHONY : Point.cpp.s
 
 VectorN.o: VectorN.cpp.o
 
@@ -321,15 +348,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... SearchingForMinimums"
 	@echo "... edit_cache"
+	@echo "... Function.o"
+	@echo "... Function.i"
+	@echo "... Function.s"
 	@echo "... Gradient.o"
 	@echo "... Gradient.i"
 	@echo "... Gradient.s"
-	@echo "... Minimum.o"
-	@echo "... Minimum.i"
-	@echo "... Minimum.s"
 	@echo "... MinimumsList.o"
 	@echo "... MinimumsList.i"
 	@echo "... MinimumsList.s"
+	@echo "... Point.o"
+	@echo "... Point.i"
+	@echo "... Point.s"
 	@echo "... VectorN.o"
 	@echo "... VectorN.i"
 	@echo "... VectorN.s"

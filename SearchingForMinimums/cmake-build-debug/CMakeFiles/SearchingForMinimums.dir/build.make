@@ -109,18 +109,18 @@ CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/CLionProjects/SearchingForMinimums/Gradient.cpp -o CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.s
 
-CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o: CMakeFiles/SearchingForMinimums.dir/flags.make
-CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o: ../Minimum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o -c /home/jakub/CLionProjects/SearchingForMinimums/Minimum.cpp
+CMakeFiles/SearchingForMinimums.dir/Point.cpp.o: CMakeFiles/SearchingForMinimums.dir/flags.make
+CMakeFiles/SearchingForMinimums.dir/Point.cpp.o: ../Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SearchingForMinimums.dir/Point.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SearchingForMinimums.dir/Point.cpp.o -c /home/jakub/CLionProjects/SearchingForMinimums/Point.cpp
 
-CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jakub/CLionProjects/SearchingForMinimums/Minimum.cpp > CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.i
+CMakeFiles/SearchingForMinimums.dir/Point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SearchingForMinimums.dir/Point.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jakub/CLionProjects/SearchingForMinimums/Point.cpp > CMakeFiles/SearchingForMinimums.dir/Point.cpp.i
 
-CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/CLionProjects/SearchingForMinimums/Minimum.cpp -o CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.s
+CMakeFiles/SearchingForMinimums.dir/Point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SearchingForMinimums.dir/Point.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/CLionProjects/SearchingForMinimums/Point.cpp -o CMakeFiles/SearchingForMinimums.dir/Point.cpp.s
 
 CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o: CMakeFiles/SearchingForMinimums.dir/flags.make
 CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o: ../MinimumsList.cpp
@@ -148,15 +148,29 @@ CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/CLionProjects/SearchingForMinimums/VectorN.cpp -o CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.s
 
+CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: CMakeFiles/SearchingForMinimums.dir/flags.make
+CMakeFiles/SearchingForMinimums.dir/Function.cpp.o: ../Function.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SearchingForMinimums.dir/Function.cpp.o -c /home/jakub/CLionProjects/SearchingForMinimums/Function.cpp
+
+CMakeFiles/SearchingForMinimums.dir/Function.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SearchingForMinimums.dir/Function.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jakub/CLionProjects/SearchingForMinimums/Function.cpp > CMakeFiles/SearchingForMinimums.dir/Function.cpp.i
+
+CMakeFiles/SearchingForMinimums.dir/Function.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SearchingForMinimums.dir/Function.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/CLionProjects/SearchingForMinimums/Function.cpp -o CMakeFiles/SearchingForMinimums.dir/Function.cpp.s
+
 # Object files for target SearchingForMinimums
 SearchingForMinimums_OBJECTS = \
 "CMakeFiles/SearchingForMinimums.dir/main.cpp.o" \
 "CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fparser.cc.o" \
 "CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o" \
 "CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o" \
-"CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o" \
+"CMakeFiles/SearchingForMinimums.dir/Point.cpp.o" \
 "CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o" \
-"CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o"
+"CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o" \
+"CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
 
 # External object files for target SearchingForMinimums
 SearchingForMinimums_EXTERNAL_OBJECTS =
@@ -165,12 +179,13 @@ SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/main.cpp.o
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fparser.cc.o
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o
-SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o
+SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/Point.cpp.o
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o
+SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/Function.cpp.o
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/build.make
 SearchingForMinimums: CMakeFiles/SearchingForMinimums.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable SearchingForMinimums"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable SearchingForMinimums"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SearchingForMinimums.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

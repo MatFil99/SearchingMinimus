@@ -5,6 +5,7 @@
 class VectorN {
 private:
     double * vec;
+    int size;
 public:
     VectorN(int n);
 
@@ -15,6 +16,10 @@ public:
     void setNVal(int n, double val);
 
     double getNVal(int n);
+
+    int getSize();
+
+    double getNorm()l
 
 };
 

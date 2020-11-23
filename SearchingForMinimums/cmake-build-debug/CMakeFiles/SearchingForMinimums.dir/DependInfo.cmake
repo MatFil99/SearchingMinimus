@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/jakub/CLionProjects/SearchingForMinimums/Function.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
   "/home/jakub/CLionProjects/SearchingForMinimums/Gradient.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o"
-  "/home/jakub/CLionProjects/SearchingForMinimums/Minimum.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Minimum.cpp.o"
   "/home/jakub/CLionProjects/SearchingForMinimums/MinimumsList.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o"
+  "/home/jakub/CLionProjects/SearchingForMinimums/Point.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Point.cpp.o"
   "/home/jakub/CLionProjects/SearchingForMinimums/VectorN.cpp" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o"
   "/home/jakub/CLionProjects/SearchingForMinimums/fparser4.5.2/fparser.cc" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fparser.cc.o"
   "/home/jakub/CLionProjects/SearchingForMinimums/fparser4.5.2/fpoptimizer.cc" "/home/jakub/CLionProjects/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/fparser4.5.2/fpoptimizer.cc.o"
