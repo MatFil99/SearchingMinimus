@@ -7,11 +7,6 @@ VectorN::VectorN(int n) {
         vec[n] = 0;
 }
 
-VectorN::VectorN(int n) {
-    vec = new double [n];
-    size = n;
-}
-
 VectorN::VectorN(int n, double * vect) {
     this->size = n;
     this->vec = vect;
