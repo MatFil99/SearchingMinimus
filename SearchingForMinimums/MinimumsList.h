@@ -6,7 +6,10 @@
 
 class MinimumsList {
     std::vector<Point> listMin;
-    bool * exists(double * tab);
+    bool exists( Point * point );
+
+    bool addMinimumToList( Point * point );
+
 };
 
 
