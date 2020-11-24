@@ -7,7 +7,6 @@
 #include "VectorN.h"
 #include <float.h>
 
-
 class FunctionTest {
 
 public:
@@ -20,7 +19,6 @@ public:
         point.setNVal(2, -2);
         point.setNVal(3, 1);
         point.setNVal(4, 3.14159265359);
-
         assert(function.getValue(point) > 16.9 && function.getValue(point) < 17.1);
         VectorN gradient(function.getGradient(point, DBL_MIN));
         VectorN expected(5);

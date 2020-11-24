@@ -27,6 +27,8 @@ public:
     double getNorm();
 
     bool operator ==( const VectorN & v );
+    VectorN operator +( const VectorN & v ) const;
+    VectorN operator -( const VectorN & v ) const;
 
     bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
 

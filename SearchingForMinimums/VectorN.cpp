@@ -63,3 +63,19 @@ bool VectorN::operator==(const VectorN &v) {
 bool VectorN::roundEquals(const VectorN & v, int n, double acceptableDeviation) const {
     return std::abs(this->getNVal(n) - v.getNVal(n)) < acceptableDeviation; // check if it throw exception?
 }
+
+VectorN VectorN::operator+(const VectorN &v) const {
+    VectorN result(*this);
+    for (int i = 0; i < size; ++i){
+        result.setNVal(i, vec[i] + v.getNVal(i));
+    }
+    return result;
+}
+
+VectorN VectorN::operator-(const VectorN &v) const {
+    VectorN result(*this);
+    for (int i = 0; i < size; ++i){
+        result.setNVal(i, vec[i] - v.getNVal(i));
+    }
+    return result;
+}
