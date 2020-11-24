@@ -2,7 +2,8 @@
 #define SEARCHINGFORMINIMUMS_GRADIENT_H
 
 #include "VectorN.h"
-#include "Function.h"
+
+class Function;
 
 class Gradient {
     Function * function;

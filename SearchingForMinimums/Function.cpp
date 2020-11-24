@@ -1,8 +1,11 @@
 #include "Function.h"11
 
+#include "Gradient.h"
+
 
 Function::Function(std::string &f) {
     parser.ParseAndDeduceVariables(f, &varNum);
+    gradient = new Gradient(this);
 }
 
 double Function::getValue(VectorN point) {
@@ -16,5 +19,5 @@ int Function::getVarNum() {
 
 VectorN Function::getGradient(VectorN point) {
     //sprawdzic czy punkt tego samego wymiaru co funkcja
-//    return gradient.get();
+    return gradient ->get();
 }

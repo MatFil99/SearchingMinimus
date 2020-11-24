@@ -1,5 +1,7 @@
 #include "Gradient.h"
 
+#include "Function.h"
+
 Gradient::Gradient(Function * f) {
     function = f;
     n = function->getVarNum();
