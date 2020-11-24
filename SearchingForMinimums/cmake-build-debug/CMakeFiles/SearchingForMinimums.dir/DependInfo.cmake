@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/Function.cpp" "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
+  "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/FunctionTest.cpp" "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/FunctionTest.cpp.o"
   "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/Gradient.cpp" "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Gradient.cpp.o"
   "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/MinimumsList.cpp" "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/MinimumsList.cpp.o"
   "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/Point.cpp" "/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir/Point.cpp.o"

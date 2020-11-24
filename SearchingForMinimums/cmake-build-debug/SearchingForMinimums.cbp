@@ -90,6 +90,12 @@
 		<Unit filename="/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/Function.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
+		<Unit filename="/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/FunctionTest.cpp">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
+		<Unit filename="/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/FunctionTest.h">
+			<Option target="SearchingForMinimums"/>
+		</Unit>
 		<Unit filename="/home/jakub/Pulpit/Projektyc++/PSZT/SearchingForMinimums/SearchingForMinimums/Gradient.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>

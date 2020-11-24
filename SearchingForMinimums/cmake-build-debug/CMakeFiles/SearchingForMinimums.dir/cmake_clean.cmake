@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SearchingForMinimums.dir/VectorN.cpp.o"
   "CMakeFiles/SearchingForMinimums.dir/Function.cpp.o"
   "CMakeFiles/SearchingForMinimums.dir/TestPoint.cpp.o"
+  "CMakeFiles/SearchingForMinimums.dir/FunctionTest.cpp.o"
   "SearchingForMinimums.pdb"
   "SearchingForMinimums"
 )

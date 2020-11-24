@@ -15,6 +15,8 @@ class Function {
 public:
     Function(std::string & f );
 
+    ~Function();
+
     double getValue(VectorN);
     int getVarNum();
     VectorN getGradient(VectorN, double );

@@ -5,7 +5,7 @@ VectorN::VectorN(int n) {
     vec = new double [n];
     size = n;
     for (int i = 0; i < n ; ++i)
-        vec[n] = 0;
+        vec[i] = 0;
 }
 
 VectorN::VectorN(int n, double * vect) {

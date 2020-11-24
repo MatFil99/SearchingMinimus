@@ -150,6 +150,33 @@ Function.cpp.s:
 	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/Function.cpp.s
 .PHONY : Function.cpp.s
 
+FunctionTest.o: FunctionTest.cpp.o
+
+.PHONY : FunctionTest.o
+
+# target to build an object file
+FunctionTest.cpp.o:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/FunctionTest.cpp.o
+.PHONY : FunctionTest.cpp.o
+
+FunctionTest.i: FunctionTest.cpp.i
+
+.PHONY : FunctionTest.i
+
+# target to preprocess a source file
+FunctionTest.cpp.i:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/FunctionTest.cpp.i
+.PHONY : FunctionTest.cpp.i
+
+FunctionTest.s: FunctionTest.cpp.s
+
+.PHONY : FunctionTest.s
+
+# target to generate assembly for a file
+FunctionTest.cpp.s:
+	$(MAKE) -f CMakeFiles/SearchingForMinimums.dir/build.make CMakeFiles/SearchingForMinimums.dir/FunctionTest.cpp.s
+.PHONY : FunctionTest.cpp.s
+
 Gradient.o: Gradient.cpp.o
 
 .PHONY : Gradient.o
@@ -378,6 +405,9 @@ help:
 	@echo "... Function.o"
 	@echo "... Function.i"
 	@echo "... Function.s"
+	@echo "... FunctionTest.o"
+	@echo "... FunctionTest.i"
+	@echo "... FunctionTest.s"
 	@echo "... Gradient.o"
 	@echo "... Gradient.i"
 	@echo "... Gradient.s"

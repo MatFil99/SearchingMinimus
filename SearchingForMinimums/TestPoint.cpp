@@ -1,6 +1,4 @@
-//
-// Created by student on 23.11.2020.
-//
+
 #include "TestPoint.h"
 #include <iostream>
 
@@ -13,7 +11,7 @@ void TestPoint::testujPunkt() {
 
     std::cout << v.getNVal(2);
 
-    Point p(v, 10.10);
+    //Point p(v, 10.10);
 
     //VectorN v3(p.getVectorN());
     //std::cout <<v3.getNVal(2);

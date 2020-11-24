@@ -8,6 +8,7 @@ Function::Function(std::string &f) {
     gradient = new Gradient(this);
 }
 
+
 double Function::getValue(VectorN point) {
     //sprawdzic czy punkt tego samego wymiaru co funkcja
     return parser.Eval(point.getTab());
@@ -20,4 +21,8 @@ int Function::getVarNum() {
 VectorN Function::getGradient(VectorN point, double step) {
     //sprawdzic czy punkt tego samego wymiaru co funkcja
     return gradient ->get(point, step);
+}
+
+Function::~Function() {
+    delete gradient;
 }

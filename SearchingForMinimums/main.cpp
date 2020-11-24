@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "TestPoint.h"
+//#include "TestPoint.h"
+#include "FunctionTest.h"
 
 int main()
 {
@@ -31,8 +32,12 @@ int main()
                   << std::endl;
     }*/
 
-    TestPoint t;
+    /*TestPoint t;
     t.testujPunkt();
+    */
+
+    FunctionTest functionTest;
+    functionTest.test();
 
     return 0;
 }
