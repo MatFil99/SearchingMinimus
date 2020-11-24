@@ -17,7 +17,7 @@ public:
 
     double getValue(VectorN);
     int getVarNum();
-    VectorN getGradient(VectorN);
+    VectorN getGradient(VectorN, double );
 
 };
 
