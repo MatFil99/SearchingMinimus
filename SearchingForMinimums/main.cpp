@@ -10,6 +10,10 @@
 
 int main()
 {
+    std::string function;
+    double minx = 5, maxx = 10;
+    int step = 1;
+
    /* std::string function;
     double minx, maxx, step;
     FunctionParser fparser;
@@ -43,6 +47,8 @@ int main()
 
     FunctionTest functionTest;
     functionTest.test();
+
+    // hej to dodany komentarz filipa
 
     return 0;
 }
