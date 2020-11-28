@@ -48,7 +48,8 @@ int main()
     FunctionTest functionTest;
     functionTest.test();
 
-    // hej to dodany komentarz filipa
+    // Zmodyfikowany komentarz Filipa
+    // Mój nowy
 
     return 0;
 }
