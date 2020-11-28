@@ -9,7 +9,7 @@ class Point {
     VectorN * point;
     double value;
 
-    Point& operator=(const Point & pPoint);
+
 
 public:
     Point( Point const &pPoint);
@@ -18,7 +18,7 @@ public:
     ~Point();
     double getValue()const;
     VectorN getVectorN()const;
-
+    Point& operator=(const Point & pPoint);
     bool operator==(const Point & point);
 };
 

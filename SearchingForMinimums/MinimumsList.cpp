@@ -4,28 +4,35 @@
 
 #include "VectorN.h"
 
-bool MinimumsList::exists(Point *point ) {
+int MinimumsList::exists(Point point ) {
     // check if point exist in list
     std::vector<Point>::iterator minLocal = listMin.begin();
-    bool exist = false;
-    while(minLocal < listMin.end() && exist == false){
-        if( minLocal.base() == point ) exist = true;
+    int exist = -1;
+    for(int i=0; i<listMin.size() && exist==-1; ++i) {
+        if (*minLocal.base() == point) exist = i;
     }
     return exist;
 }
 
-bool MinimumsList::addMinimumToList(Point point) {
-    if(this->exists(&point)){
-        return false; // minimum exists, not adding
+void MinimumsList::addMinimumToList(Point point) {
+    int index = this->exists(point);
+    if(index!=-1){
+        if( point.getValue()<listMin.at(index).getValue() ){
+            listMin.at(index) = point;
+        }
+         // minimum exists, not adding
+         std::cout << index;
+    }{
+        Point p(point);
+        listMin.push_back(p);
     }
-    Point p(point);
-    this->getListMin().push_back(p);
+    std::cout << this->getListMin().at(0);
 }
 
-std::vector<Point> MinimumsList::getListMin() { return listMin; }
+std::vector<Point>& MinimumsList::getListMin() { return listMin; }
 
 void MinimumsList::printList() {
-    for(std::vector<Point>::iterator it = listMin.begin(); it != listMin.end(); it++ ){
-        //std::cout static_cast<Point>(it);
+    for(std::vector<Point>::iterator it = listMin.begin(); it < listMin.end(); it++ ){
+        std::cout << *it.base();
     }
 }

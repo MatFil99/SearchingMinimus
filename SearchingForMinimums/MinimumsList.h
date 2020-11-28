@@ -8,14 +8,15 @@ class MinimumsList {
     int current=0;
     std::vector<Point> listMin;
 
-    bool exists(Point *point );
+    int exists(Point point );
 
-    int getCurrent(){ return current; };
-    int incrementCurrent() { ++current; };
+    int getCurrent(){ return current; }
+    int incrementCurrent() { ++current; }
 public:
-    bool addMinimumToList( Point point );
-    std::vector<Point> getListMin();
+    void addMinimumToList( Point point );
+    std::vector<Point> & getListMin();
 
+    void addElementToList(Point p);
     void printList();
 };
 

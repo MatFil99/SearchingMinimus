@@ -39,11 +39,11 @@ void Algorithm::leaveMinimum(VectorN start) {
         direction.setNVal(i, 1);
         max = goToMaximum(start, direction, stepLength);
         max = max + direction.multiply(stepLength);
-        searchOneMinimum(max);
+        minList.addMinimumToList(searchOneMinimum(max));
         direction.setNVal(i, -1);
         max = goToMaximum(start, direction, stepLength);
         max = max + direction.multiply(stepLength);
-        searchOneMinimum(max);
+        minList.addMinimumToList(searchOneMinimum(max));
     }
 }
 

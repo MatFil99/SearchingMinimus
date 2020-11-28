@@ -24,12 +24,16 @@ double Point::getValue()const{
     return this->value;
 }
 
+Point& Point::operator=(const Point &pPoint) {
+    VectorN v(pPoint.getVectorN());
+    Point p(v, pPoint.getValue());
+    return p;
+}
+
 std::ostream& operator<<(std::ostream& os, const Point& dt)
 {
-    const VectorN & vector = dt.getVectorN();
-    for( int i =0; i<vector.getSize(); i++){
-        os << vector.getNVal(i) << ", ";
-    }
+    const VectorN vectorN = dt.getVectorN();
+    os << vectorN;
     os << "\n" << "value = " << dt.getValue() << "\n";
     return os;
 }

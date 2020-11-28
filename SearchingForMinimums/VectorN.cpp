@@ -1,5 +1,6 @@
 #include "VectorN.h"
 #include <cmath>
+#include <iostream>
 
 VectorN::VectorN(int n)
     :
@@ -97,4 +98,11 @@ VectorN VectorN::multiply(const double scalar) const {
 
 bool VectorN::operator!=(const VectorN &v) const {
     return !(*this == v);
+}
+
+std::ostream& operator<<(std::ostream& os, const VectorN& dt){
+    for( int i =0; i<dt.getSize(); i++){
+        os << dt.getNVal(i) << ", ";
+    }
+    return os;
 }

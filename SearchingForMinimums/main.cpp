@@ -16,6 +16,9 @@ int main()
     double minx = 5, maxx = 10;
     int step = 1;
 
+
+
+
    /* std::string function;
     double minx, maxx, step;
     FunctionParser fparser;
@@ -48,19 +51,23 @@ int main()
     */
 
 
-
     MinimumsList mlist;
+
 
 
     VectorN v(2), v2(2), v3(2), v4(2);
 
     Point p1(v, 10), p2(v2, 20), p3(v3, 30), p4(v4, 40);
 
+//    std::cout << p1;
+//    std::cout << v;
+//
     mlist.addMinimumToList(p1);
     mlist.addMinimumToList(p2);
     mlist.addMinimumToList(p3);
     mlist.addMinimumToList(p4);
-
+//
+    mlist.printList();
 
     return 0;
 }

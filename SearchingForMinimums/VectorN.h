@@ -3,6 +3,8 @@
 
 #define ACCEPTABLEDEVIATION 0.05
 
+#include <iostream>
+
 class VectorN {
 private:
     double * vec;
@@ -37,5 +39,7 @@ public:
 
     bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const VectorN& dt);
 
 #endif //SEARCHINGFORMINIMUMS_VECTORN_H
