@@ -94,3 +94,7 @@ VectorN VectorN::multiply(const double scalar) const {
     }
     return result;
 }
+
+bool VectorN::operator!=(const VectorN &v) const {
+    return !(*this == v);
+}

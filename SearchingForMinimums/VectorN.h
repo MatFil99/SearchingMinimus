@@ -28,10 +28,12 @@ public:
 
 
     bool operator ==( const VectorN & v ) const;
+    bool operator !=( const VectorN & v ) const;
 
     VectorN operator +( const VectorN & v ) const;
     VectorN operator -( const VectorN & v ) const;
-    VectorN multiply (double scalar) const ;
+    VectorN multiply (double scalar) const;
+
 
     bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
 };

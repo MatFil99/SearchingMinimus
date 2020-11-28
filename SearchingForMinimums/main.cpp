@@ -6,6 +6,8 @@
 //#include "TestPoint.h"
 #include "FunctionTest.h"
 
+#include "MinimumsList.h"
+
 //Useless comment
 
 int main()
@@ -45,12 +47,20 @@ int main()
     t.testujPunkt();
     */
 
-    FunctionTest functionTest;
-    functionTest.test();
 
-    // Mój nowy
-    // hej to dodany komentarz filipa
-    // <include> cos tam
+
+    MinimumsList mlist;
+
+
+    VectorN v(2), v2(2), v3(2), v4(2);
+
+    Point p1(v, 10), p2(v2, 20), p3(v3, 30), p4(v4, 40);
+
+    mlist.addMinimumToList(p1);
+    mlist.addMinimumToList(p2);
+    mlist.addMinimumToList(p3);
+    mlist.addMinimumToList(p4);
+
 
     return 0;
 }
