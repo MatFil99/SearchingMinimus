@@ -11,6 +11,9 @@ int main()
     std::string function;
     double minx = 5, maxx = 10;
     int step = 1;
+
+   /* std::string function;
+    double minx, maxx, step;
     FunctionParser fparser;
 
     while(true)
@@ -32,6 +35,7 @@ int main()
         std::cout << "f(" << vals[0] << ") = " << fparser.Eval(vals)
                   << std::endl;
     }
+    */
 
 
 
