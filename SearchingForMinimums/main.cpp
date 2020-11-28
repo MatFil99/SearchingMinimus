@@ -41,5 +41,7 @@ int main()
     FunctionTest functionTest;
     functionTest.test();
 
+    // hej to dodany komentarz filipa
+
     return 0;
 }
