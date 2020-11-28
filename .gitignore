@@ -1,2 +1,2 @@
-SearchingForMinimums/cmake-build-debug/*
-SearchingForMinimums/.idea/*
+cmake-build-debug
+.idea
