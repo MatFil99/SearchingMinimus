@@ -6,6 +6,8 @@
 //#include "TestPoint.h"
 #include "FunctionTest.h"
 
+//Useless comment
+
 int main()
 {
    /* std::string function;
