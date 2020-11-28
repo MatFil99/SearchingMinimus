@@ -47,9 +47,12 @@ int main()
 
     FunctionTest functionTest;
     functionTest.test();
-
-    // Zmodyfikowany komentarz Filipa
+    
     // Mój nowy
+    // hej to dodany komentarz filipa
+    // <include> cos tam
+
+>>>>>>> 63ba2a67b3936062ad279cb05bc92baad8812619
 
     return 0;
 }
