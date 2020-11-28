@@ -15,8 +15,7 @@ int MinimumsList::exists(Point point ) {
 
 void MinimumsList::addMinimumToList(Point point) {
 
-    if (point.isNull())
-        return;
+    if (point.isNull()) { std::cout << "puste"; return; }
     int index = this->exists(point);
     if(index!=-1){
         if( point.getValue()<listMin.at(index).getValue() ){

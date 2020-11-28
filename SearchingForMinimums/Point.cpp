@@ -32,7 +32,7 @@ Point& Point::operator=(const Point &pPoint) {
 }
 
 bool Point::isNull() {
-    return point;
+    return point == nullptr;
 }
 
 Point::Point() {
