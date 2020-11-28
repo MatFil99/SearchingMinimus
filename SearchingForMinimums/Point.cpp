@@ -15,11 +15,6 @@ Point::Point(Point const &point) {
     value = point.getValue();
 }
 
-Point::Point() {
-    point = nullptr;
-    value = 0;
-}
-
 Point::~Point(){
     delete point;
 }
@@ -34,6 +29,14 @@ Point& Point::operator=(const Point &pPoint) {
     VectorN v(pPoint.getVectorN());
     Point p(v, pPoint.getValue());
     return p;
+}
+
+bool Point::isNull() {
+    return point;
+}
+
+Point::Point() {
+    point = nullptr;
 }
 
 std::ostream& operator<<(std::ostream& os, const Point& dt)

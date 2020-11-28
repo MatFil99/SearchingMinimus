@@ -49,20 +49,17 @@ void Algorithm::leaveMinimum(VectorN start) {
     }
 }
 
-void Algorithm::searchAllMinimums() {
-    VectorN startSearching = startPoint;
-    int iteration = 0;
-    int firstNotLeftMinimum = 0; //indeks na pierwsze minimum, ktorego nie opuscilismy w celu znalezienia kolejnych
 
-    Point foundMinimum = searchOneMinimum(startSearching);
-    while(firstNotLeftMinimum < minList.getListMin().size() && iteration < limitIteration ){
-        leaveMinimum(minList.getListMin().at(firstNotLeftMinimum).getVectorN());
-        ++firstNotLeftMinimum;
+void Algorithm::searchAllMinimums(VectorN start) {
+    int iteration;
+    int n = 0;
+    Point optimum(searchOneMinimum(start));
+    minList.addMinimumToList(optimum);
+    while (n < minList.getListMin().size() && iteration < limitIteration) {
+        leaveMinimum(minList.getListMin().at(n).getVectorN());
+        ++n;
     }
 
-    do{
-
-    } while(firstNotLeftMinimum < minList.getListMin().size() && iteration < limitIteration);
 }
 
 

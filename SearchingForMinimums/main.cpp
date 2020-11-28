@@ -59,6 +59,10 @@ int main()
 
     Point p1(v, 10), p2(v2, 20), p3(v3, 30), p4(v4, 40);
 
+//    Point point1 = p2;
+//
+//    std::cout << point1;
+
 //    std::cout << p1;
 //    std::cout << v;
 //
@@ -66,7 +70,7 @@ int main()
     mlist.addMinimumToList(p2);
     mlist.addMinimumToList(p3);
     mlist.addMinimumToList(p4);
-//
+
     mlist.printList();
 
     return 0;

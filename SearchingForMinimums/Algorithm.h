@@ -6,7 +6,6 @@
 #include "Function.h"
 
 class Algorithm {
-
     MinimumsList minList;
     Function function;
     VectorN startPoint;
@@ -18,7 +17,7 @@ protected:
 public:
     Algorithm(Function f, VectorN s );
 
-    void searchAllMinimums();    //
+    void searchAllMinimums(VectorN start);    //
     Point searchOneMinimum(VectorN start);    // znajduje pojedyncze minimum
 
     VectorN searchMaximumDirection(int direction, int maxIterations ); //
