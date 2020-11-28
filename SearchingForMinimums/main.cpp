@@ -9,7 +9,8 @@
 int main()
 {
     std::string function;
-    double minx, maxx, step;
+    double minx = 5, maxx = 10;
+    int step = 1;
     FunctionParser fparser;
 
     while(true)
