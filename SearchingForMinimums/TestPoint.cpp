@@ -5,20 +5,20 @@
 #include <iostream>
 
 
-void TestPoint::testujPunkt() {
-    double * tab = new double[5];
-    for( int i=0; i<5; ++i ){ tab[i] = i; }
-    VectorN v(5, tab);
+void TestPoint::testPoint() {
+    double * tab = new double[115];
+    for( int i=0; i<115; ++i ){ tab[i] = i; }
+    VectorN v(115, tab);
     VectorN v2(v);
 
-    std::cout << v.getNVal(2);
+    VectorN v5(5);
 
     Point p(v, 10.10);
 
-    //VectorN v3(p.getVectorN());
-    //std::cout <<v3.getNVal(2);
+    Point p2(p);
 
-//    std::cout << p;
+    std::cout << p << p2;
 
-
+    bool czyPrawda = p2==p;
+    std::cout << czyPrawda;
 }

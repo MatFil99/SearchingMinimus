@@ -10,7 +10,7 @@ private:
 public:
     VectorN(int n);
 
-    VectorN(int n, double * vec);
+    VectorN(int n, double vec[]);
 
     VectorN( const VectorN & vectN );
 
@@ -26,7 +26,7 @@ public:
 
     double getNorm();
 
-    bool operator ==( const VectorN & v );
+    bool operator ==( const VectorN & v ) const;
 
     bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
 

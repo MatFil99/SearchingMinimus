@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
+				<Option working_dir="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
+				<Option working_dir="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
+				<Option working_dir="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SearchingForMinimums">
-				<Option output="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/SearchingForMinimums" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
+				<Option output="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/SearchingForMinimums" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 SearchingForMinimums"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 SearchingForMinimums"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SearchingForMinimums/fast">
-				<Option output="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/SearchingForMinimums" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
+				<Option output="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/SearchingForMinimums" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,77 +77,77 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 SearchingForMinimums/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 SearchingForMinimums/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Function.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/Function.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Function.h">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/Function.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Gradient.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/Gradient.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Gradient.h">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/Gradient.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/MinimumsList.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/MinimumsList.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/MinimumsList.h">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/MinimumsList.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/Point.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/Point.h">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/Point.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/TestPoint.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/TestPoint.h">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/TestPoint.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/VectorN.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/VectorN.h">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/VectorN.h">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/extrasrc/fpaux.hh">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/extrasrc/fpaux.hh">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/extrasrc/fptypes.hh">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/extrasrc/fptypes.hh">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.cc">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.cc">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.hh">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser.hh">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser_gmpint.hh">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser_gmpint.hh">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser_mpfr.hh">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fparser_mpfr.hh">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpconfig.hh">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpconfig.hh">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpoptimizer.cc">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/fparser4.5.2/fpoptimizer.cc">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/main.cpp">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/main.cpp">
 			<Option target="SearchingForMinimums"/>
 		</Unit>
-		<Unit filename="/home/student/Student/PSZT/Projekt_1/obecna_wersja/SearchingForMinimums/SearchingForMinimums/CMakeLists.txt">
+		<Unit filename="/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,16 +1,23 @@
 #include "VectorN.h"
 #include <cmath>
 
-VectorN::VectorN(int n) {
+VectorN::VectorN(int n)
+    :
+    size(n),
+    vec(new double [n])
+{
     vec = new double [n];
     size = n;
     for (int i = 0; i < n ; ++i)
-        vec[n] = 0;
+        vec[i] = 0;
 }
 
-VectorN::VectorN(int n, double * vect) {
+VectorN::VectorN(int n, double vect[]){
+    vec = new double [n];
     this->size = n;
-    this->vec = vect;
+    for( int i = 0; i<n; ++i ){
+        this->setNVal(i, vect[i]);
+    }
 }
 
 VectorN::VectorN( const VectorN & vectN ){
@@ -50,7 +57,7 @@ double VectorN::getNorm() {
     return norm;
 }
 
-bool VectorN::operator==(const VectorN &v) {
+bool VectorN::operator==(const VectorN &v) const {
     bool ifEquals = true;
     for(int i=0; i<v.getSize(); i++){
         if(this->roundEquals(v, i, ACCEPTABLEDEVIATION)){// accaptabledeviation could adopt, but now it is constant

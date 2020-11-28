@@ -9,7 +9,9 @@
 
 class TestPoint {
 public:
-    void testujPunkt();
+    void testPoint();
+
+//    void test
 };
 
 

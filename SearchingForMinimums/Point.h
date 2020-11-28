@@ -6,21 +6,20 @@
 #include <iostream>
 
 class Point {
-    Point(VectorN vectorN, double val);
-
     VectorN * point;
     double value;
-    bool operator==(const Point & point);
 
     Point& operator=(const Point & pPoint);
 
 public:
-    Point( Point *pPoint);
+    Point( Point const &pPoint);
     Point();
-    Point(VectorN &vectorN, double val);
-
+    Point(VectorN vectorN, double val);
+    ~Point();
     double getValue()const;
     VectorN getVectorN()const;
+
+    bool operator==(const Point & point);
 };
 
 std::ostream& operator<<(std::ostream& os, const Point& dt);
