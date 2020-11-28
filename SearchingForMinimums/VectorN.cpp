@@ -59,13 +59,12 @@ double VectorN::getNorm() {
 }
 
 bool VectorN::operator==(const VectorN &v) const {
-    bool ifEquals = true;
     for(int i=0; i<v.getSize(); i++){
-        if(this->roundEquals(v, i, ACCEPTABLEDEVIATION)){// accaptabledeviation could adopt, but now it is constant
-            ifEquals = false;
-            break;
+        if(!this->roundEquals(v, i, ACCEPTABLEDEVIATION)){// accaptabledeviation could adopt, but now it is constant
+            return false;
         }
     }
+    return true;
 }
 
 bool VectorN::roundEquals(const VectorN & v, int n, double acceptableDeviation) const {

@@ -30,6 +30,14 @@ Point& Point::operator=(const Point &pPoint) {
     return p;
 }
 
+bool Point::isNull() {
+    return point;
+}
+
+Point::Point() {
+    point = nullptr;
+}
+
 std::ostream& operator<<(std::ostream& os, const Point& dt)
 {
     const VectorN vectorN = dt.getVectorN();
