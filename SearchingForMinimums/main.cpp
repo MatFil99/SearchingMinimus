@@ -49,6 +49,9 @@ int main()
     functionTest.test();
 
     // hej to dodany komentarz filipa
+    // Kapelutek to drugi komentarz filipa
+    // <include> cos tam
+
 
     return 0;
 }
