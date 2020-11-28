@@ -1,3 +1,0 @@
-/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/student/Student/PSZT/Projekt_1/SearchingForMinimums/SearchingForMinimums/SearchingForMinimums/cmake-build-debug/CMakeFiles/SearchingForMinimums.dir

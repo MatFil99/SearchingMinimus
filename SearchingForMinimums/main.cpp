@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "TestPoint.h"
+//#include "TestPoint.h"
+#include "FunctionTest.h"
 
 int main()
 {
@@ -32,6 +33,13 @@ int main()
     }
 
 
+
+    /*TestPoint t;
+    t.testujPunkt();
+    */
+
+    FunctionTest functionTest;
+    functionTest.test();
 
     return 0;
 }
