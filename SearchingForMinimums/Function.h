@@ -4,6 +4,7 @@
 
 #include "fparser4.5.2/fparser.hh"
 #include "VectorN.h"
+#include <float.h>
 
 class Gradient;
 
@@ -19,7 +20,7 @@ public:
 
     double getValue(VectorN);
     int getVarNum();
-    VectorN getGradient(VectorN, double );
+    VectorN getGradient(VectorN, double step = DBL_MIN);
 
 };
 

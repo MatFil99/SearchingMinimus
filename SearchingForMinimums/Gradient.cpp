@@ -7,7 +7,7 @@ Gradient::Gradient(Function * f) {
     n = function->getVarNum();
 }
 
-VectorN Gradient::get(VectorN point, double step) {
+VectorN Gradient::get(VectorN point, double step ) {
     VectorN gradient(n);
     double val;
     for (int i = 0; i < n; ++i){

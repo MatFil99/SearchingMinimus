@@ -17,7 +17,7 @@ int Function::getVarNum() {
     return varNum;
 }
 
-VectorN Function::getGradient(VectorN point, double step) {
+VectorN Function::getGradient(VectorN point, double step ) {
     //sprawdzic czy punkt tego samego wymiaru co funkcja
     return gradient ->get(point, step);
 }

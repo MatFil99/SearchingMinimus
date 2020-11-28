@@ -2,6 +2,7 @@
 #define SEARCHINGFORMINIMUMS_GRADIENT_H
 
 #include "VectorN.h"
+#include <float.h>
 
 class Function;
 
@@ -10,7 +11,7 @@ class Gradient {
     int n;
 public:
     Gradient(Function * f);
-    VectorN get(VectorN point, double step);
+    VectorN get(VectorN point, double step = DBL_MIN);
 };
 
 
