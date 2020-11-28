@@ -6,15 +6,15 @@
 
 int MinimumsList::exists(Point point ) {
     // check if point exist in list
-    std::vector<Point>::iterator minLocal = listMin.begin();
     int exist = -1;
     for(int i=0; i<listMin.size() && exist==-1; ++i) {
-        if (*minLocal.base() == point) exist = i;
+        if (listMin.at(i) == point) exist = i;
     }
     return exist;
 }
 
 void MinimumsList::addMinimumToList(Point point) {
+    if(point.isNull()) return ;
     int index = this->exists(point);
     if(index!=-1){
         if( point.getValue()<listMin.at(index).getValue() ){
@@ -26,7 +26,6 @@ void MinimumsList::addMinimumToList(Point point) {
         Point p(point);
         listMin.push_back(p);
     }
-    std::cout << this->getListMin().at(0);
 }
 
 std::vector<Point>& MinimumsList::getListMin() { return listMin; }

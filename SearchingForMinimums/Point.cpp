@@ -1,5 +1,6 @@
 #include "Point.h"
 
+
 bool Point::operator==(const Point &point) {
     return this->getVectorN()==point.getValue() && this->getValue()==point.getValue();
 }
@@ -12,6 +13,11 @@ Point::Point(VectorN vectorN, double val) {
 Point::Point(Point const &point) {
     this->point = new VectorN(point.getVectorN());
     value = point.getValue();
+}
+
+Point::Point() {
+    point = nullptr;
+    value = 0;
 }
 
 Point::~Point(){

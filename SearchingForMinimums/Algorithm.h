@@ -10,6 +10,7 @@ class Algorithm {
     MinimumsList minList;
     Function function;
     VectorN startPoint;
+    int limitIteration = 50;
 
 protected:
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);

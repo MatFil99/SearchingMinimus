@@ -29,6 +29,7 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
         start = start + step;
         val[0] = {derivative(function, start, direction)};
     } while(VectorN(1, val ) != zero);
+    return start;
 }
 
 void Algorithm::leaveMinimum(VectorN start) {
@@ -39,12 +40,29 @@ void Algorithm::leaveMinimum(VectorN start) {
         direction.setNVal(i, 1);
         max = goToMaximum(start, direction, stepLength);
         max = max + direction.multiply(stepLength);
+
         minList.addMinimumToList(searchOneMinimum(max));
         direction.setNVal(i, -1);
         max = goToMaximum(start, direction, stepLength);
         max = max + direction.multiply(stepLength);
         minList.addMinimumToList(searchOneMinimum(max));
     }
+}
+
+void Algorithm::searchAllMinimums() {
+    VectorN startSearching = startPoint;
+    int iteration = 0;
+    int firstNotLeftMinimum = 0; //indeks na pierwsze minimum, ktorego nie opuscilismy w celu znalezienia kolejnych
+
+    Point foundMinimum = searchOneMinimum(startSearching);
+    while(firstNotLeftMinimum < minList.getListMin().size() && iteration < limitIteration ){
+        leaveMinimum(minList.getListMin().at(firstNotLeftMinimum).getVectorN());
+        ++firstNotLeftMinimum;
+    }
+
+    do{
+
+    } while(firstNotLeftMinimum < minList.getListMin().size() && iteration < limitIteration);
 }
 
 

@@ -5,13 +5,10 @@
 #include <vector>
 
 class MinimumsList {
-    int current=0;
     std::vector<Point> listMin;
 
     int exists(Point point );
 
-    int getCurrent(){ return current; }
-    int incrementCurrent() { ++current; }
 public:
     void addMinimumToList( Point point );
     std::vector<Point> & getListMin();

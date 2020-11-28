@@ -4,12 +4,11 @@
 
 #include "VectorN.h"
 #include <iostream>
+#include "float.h"
 
 class Point {
     VectorN * point;
     double value;
-
-
 
 public:
     Point( Point const &pPoint);
@@ -20,6 +19,7 @@ public:
     VectorN getVectorN()const;
     Point& operator=(const Point & pPoint);
     bool operator==(const Point & point);
+    bool isNull(){ return point== nullptr; }
 };
 
 std::ostream& operator<<(std::ostream& os, const Point& dt);
