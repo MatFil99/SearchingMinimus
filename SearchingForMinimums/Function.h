@@ -14,7 +14,8 @@ class Function {
     Gradient * gradient;
 
 public:
-    Function(std::string & f );
+    Function(std::string &f);
+    Function(){;}
 
     ~Function();
 
