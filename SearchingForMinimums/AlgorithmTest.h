@@ -10,27 +10,29 @@
 #include "VectorN.h"
 #include "Algorithm.h"
 
-class AlgorithmTest {
+class AlgorithmTest: Algorithm {
 public:
+    AlgorithmTest(std::string fun):
+        Algorithm(fun)
+    {
+
+    }
+
     void runTests(){
         testGoToMaximum();
     }
 
-    Algorithm& initializeAlg( std::string fun, int numVar=-1){
-        if(numVar <= 0){
-            Algorithm alg(fun);
-            return alg;
-        }else{
-            Algorithm alg(fun, numVar);
-            return alg;
-        }
-    }
-
     void testGoToMaximum(){
-        Algorithm alg("(x-4)^2", 1);
-        alg.searchAllMinimums(alg.getStartPoint());
-
-        alg.getMinList().printList();
+        //Algorithm alg("x^2+y^2", 1);
+        VectorN start(2);
+        start.setNVal(0, -15);
+        start.setNVal(1, 0);
+        VectorN direction(2);
+        direction.setNVal(0,1);
+//        std::cout << start;
+        VectorN min(goToMinimum(start, direction, 0.01));
+        std::cout << min;
+//        alg.getMinList().printList();
     }
 };
 

@@ -10,18 +10,23 @@ class Algorithm {
     Function function;
     VectorN startPoint;
     int limitIterations = 50; // maksymalna liczba prob poszukiwania minimum
-    int maxIterations = 50000;
+    int maxIterations = 50;
     double beta=START_BETA;
 
     const double PENALTY = 2; // kara za przekroczenie minimum
-    const double MAXREWARD = 1.5; // nagroda za znalezienie mniejszej wartosci i uzyskanie pochodnej ponad 1.5 raza lepszej (mniejszej)
+    const double SMALL_REWARD = 1.05; // nagroda za znalezienie mniejszej wartosci i uzyskanie pochodnej ponad 1.5 raza lepszej (mniejszej)
     const double MAX_BETA = 4;
-    const double START_BETA = 0.01;
+    const double PRECISION_OPTIMUM = 0.05;
+    constexpr static const double START_BETA = 0.0005;
+    const double PRECISION_DERIVATIVE = 0.005;
+    static const int MAX_ITERATIONS = 500;
+
 protected:
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);
     VectorN goToMinimum(VectorN start, VectorN grad, double stepLength);
 
     bool checkIfMinimum(VectorN optimumCandidate);
+    void adoptBetaMin(double prevV, double currv, double prevD, double currD);
 
 public:
     Algorithm(std::string f, VectorN s );   // jesli chcesz, mozesz podac punkt poczatkowy, ale musisz znac wymiar problemu

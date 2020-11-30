@@ -9,6 +9,8 @@ class VectorN {
 private:
     double * vec;
     int size;
+
+
 public:
     VectorN(int n);
 
@@ -35,9 +37,15 @@ public:
     VectorN operator +( const VectorN & v ) const;
     VectorN operator -( const VectorN & v ) const;
     VectorN multiply (double scalar) const;
-
+    VectorN& operator =( const VectorN & v );
 
     bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
+
+    void setSize(int n) { size=n; };
+
+    static const int NULL_VECTOR = -1;
+
+    bool ifNull() const;
 };
 
 std::ostream& operator<<(std::ostream& os, const VectorN& dt);

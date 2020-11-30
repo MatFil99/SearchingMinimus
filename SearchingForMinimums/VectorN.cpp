@@ -1,14 +1,15 @@
 #include "VectorN.h"
 #include <cmath>
 #include <iostream>
+#include <iomanip>
 
 VectorN::VectorN(int n)
     :
-    size(n),
-    vec(new double [n])
+    size(n)
 {
-    vec = new double [n];
-    size = n;
+    if(size > 0)
+        vec = new double [n];
+    else vec = nullptr;
     for (int i = 0; i < n ; ++i)
         vec[i] = 0;
 }
@@ -67,6 +68,22 @@ bool VectorN::operator==(const VectorN &v) const {
     return true;
 }
 
+VectorN& VectorN::operator=(const VectorN &v) {
+    delete[] vec;
+    size = v.getSize();
+    if( size < 0 ){
+        size = -1;
+        vec = nullptr;
+        // pusty wektor, bo
+    }else {
+        vec = new double[size];
+        for ( int i=0; i<size; ++i ){
+            vec[i] = v.getNVal(i);
+        }
+    }
+    return *this;
+}
+
 bool VectorN::roundEquals(const VectorN & v, int n, double acceptableDeviation) const {
     return std::abs(this->getNVal(n) - v.getNVal(n)) < acceptableDeviation; // check if it throw exception?
 }
@@ -99,7 +116,12 @@ bool VectorN::operator!=(const VectorN &v) const {
     return !(*this == v);
 }
 
+bool VectorN::ifNull() const{
+    return vec == nullptr;
+}
+
 std::ostream& operator<<(std::ostream& os, const VectorN& dt){
+    if(dt.ifNull()) return os << "Null VectorN";
     for( int i =0; i<dt.getSize(); i++){
         os << dt.getNVal(i) << ", ";
     }
