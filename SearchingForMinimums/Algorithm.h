@@ -10,13 +10,13 @@ class Algorithm {
     Function function;
     VectorN startPoint;
     int limitIterations = 50; // maksymalna liczba prob poszukiwania minimum
-    int maxIterations = 50;
+
     double beta=START_BETA;
 
     const double PENALTY = 2; // kara za przekroczenie minimum
     const double SMALL_REWARD = 1.05; // nagroda za znalezienie mniejszej wartosci i uzyskanie pochodnej ponad 1.5 raza lepszej (mniejszej)
     const double MAX_BETA = 4;
-    const double PRECISION_OPTIMUM = 0.05;
+    const double PRECISION_OPTIMUM = 0.5;
     constexpr static const double START_BETA = 0.000005;
     const double PRECISION_DERIVATIVE = 0.0005;
     static const int MAX_ITERATIONS = 500;

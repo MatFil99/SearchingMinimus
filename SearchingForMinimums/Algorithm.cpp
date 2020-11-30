@@ -31,22 +31,29 @@ double derivative(Function& function, VectorN point, VectorN direction, double s
 Point Algorithm::searchOneMinimum(VectorN start) {
     VectorN gradient = function.getGradient(start), zero(function.getVarNum());
     double stepLength = 0.01;
-    while(gradient != zero){
+    unsigned int count = 0;
+    while(gradient != zero && count < 100 ){
+        VectorN prev = start;
         start = goToMinimum(start, gradient, stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
         VectorN step = gradient.multiply(-1*stepLength);
         start = start+step;
         gradient = function.getGradient(start);
+        ++count;
     }
+    if (count == limitIterations)
+        return Point();
+    else
     return Point(start, function.getValue(start));
 }
 
+/*
 VectorN Algorithm::goToMinimum(VectorN start, VectorN grad, double stepLength ){
     VectorN resultMin(start.getSize()), prevPoint(start.getSize());
     double lastStepLenght = PRECISION_OPTIMUM+1, previousV = function.getValue(start), currentV=function.getValue(start+grad.multiply(beta));
     double currDerivative = derivative(function, start, grad, PRECISION_DERIVATIVE), prevDerivative = derivative(function, start, grad, PRECISION_DERIVATIVE);
     int iterations = 0;
-    while( Algorithm::MAX_ITERATIONS > iterations++ && (/*(grad.multiply(beta)).getNorm()*/lastStepLenght > PRECISION_OPTIMUM || currDerivative<0 ) ){
-        if ( currDerivative > 0 && (/*grad.multiply(beta)).getNorm()*/ lastStepLenght > PRECISION_DERIVATIVE) || currentV>previousV ){
+    while( Algorithm::MAX_ITERATIONS > iterations++ && (lastStepLenght > PRECISION_OPTIMUM || currDerivative<0 ) ){
+        if ( currDerivative > 0 && ( lastStepLenght > PRECISION_DERIVATIVE) || currentV>previousV ){
             // "cofnij" sie do poprzedniego punktu i zrob mniejszy krok
             beta = START_BETA; // minimalny krok
             std::cout << prevPoint << "<-- prev Point \t" << start << "<-- curr Point\n";
@@ -81,22 +88,51 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN grad, double stepLength ){
         resultMin = start;
     }
     return resultMin;
-}
+}*/
 
 void Algorithm::adoptBetaMin(double prevV, double currV, double prevD, double currD) {
 
 }
 
+VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLength){
+    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
+    VectorN zero(1);
+    unsigned int count = 0;
+    double val[1];
+    while (step.getNorm() > PRECISION_OPTIMUM && count < limitIterations) {
+        while (derivative(function, start, direction, PRECISION_DERIVATIVE) <= 0 && count < limitIterations ) {
+            start = start + step;
+            ++count;
+        }
+        step = step.multiply(1/2);
+    }
+    return start ;
+}
+
 VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLength){
+    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
+    VectorN zero(1);
+    unsigned int count = 0;
+    double val[1];
+    while (step.getNorm() > PRECISION_OPTIMUM && count < limitIterations) {
+        do {
+            start = start + step;
+            ++count;
+        } while (derivative(function, start, direction, PRECISION_DERIVATIVE) >= 0 && count < limitIterations );
+        step = step.multiply(1/2);
+    }
+    return start ;
+}
+
+/*VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLength){
     VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
     VectorN zero(1);
     double val[1];
     do {
         start = start + step;
-        val[0] = {derivative(function, start, direction, PRECISION_DERIVATIVE)};
-    } while(VectorN(1, val ) != zero);
-    return start;
-}
+    } while(derivative(function, start, direction, PRECISION_DERIVATIVE) < 0);
+    return start - step;
+}*/
 
 bool Algorithm::checkIfMinimum(VectorN minimumCandidate ) {
     double minCandidateVal = function.getValue(minimumCandidate);

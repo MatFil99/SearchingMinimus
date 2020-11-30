@@ -26,13 +26,16 @@ public:
         //Algorithm alg("x^2+y^2", 1);
         VectorN start(2);
         start.setNVal(0, -15);
-        start.setNVal(1, 0);
+        start.setNVal(1, 45);
         VectorN direction(2);
-        direction.setNVal(0,1);
+        //direction.setNVal(0,1);
 //        std::cout << start;
-        VectorN min(goToMinimum(start, direction, 0.01));
-        std::cout << min;
-//        alg.getMinList().printList();
+        Algorithm algorithm("a^2+b^2", start);
+        algorithm.searchAllMinimums(start);
+        //VectorN min(goToMinimum(start, direction, 0.01));
+        //std::cout << min;
+        algorithm.searchOneMinimum(start);
+        algorithm.getMinList().printList();
     }
 };
 
