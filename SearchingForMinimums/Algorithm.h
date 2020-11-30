@@ -17,8 +17,8 @@ class Algorithm {
     const double SMALL_REWARD = 1.05; // nagroda za znalezienie mniejszej wartosci i uzyskanie pochodnej ponad 1.5 raza lepszej (mniejszej)
     const double MAX_BETA = 4;
     const double PRECISION_OPTIMUM = 0.05;
-    constexpr static const double START_BETA = 0.0005;
-    const double PRECISION_DERIVATIVE = 0.005;
+    constexpr static const double START_BETA = 0.000005;
+    const double PRECISION_DERIVATIVE = 0.0005;
     static const int MAX_ITERATIONS = 500;
 
 protected:

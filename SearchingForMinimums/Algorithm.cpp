@@ -42,16 +42,17 @@ Point Algorithm::searchOneMinimum(VectorN start) {
 
 VectorN Algorithm::goToMinimum(VectorN start, VectorN grad, double stepLength ){
     VectorN resultMin(start.getSize()), prevPoint(start.getSize());
-    double previousV = function.getValue(start), currentV=function.getValue(start+grad.multiply(beta));
+    double lastStepLenght = PRECISION_OPTIMUM+1, previousV = function.getValue(start), currentV=function.getValue(start+grad.multiply(beta));
     double currDerivative = derivative(function, start, grad, PRECISION_DERIVATIVE), prevDerivative = derivative(function, start, grad, PRECISION_DERIVATIVE);
     int iterations = 0;
-    while( Algorithm::MAX_ITERATIONS > iterations++ && ((grad.multiply(beta)).getNorm() > PRECISION_OPTIMUM || currDerivative<0 ) ){
-        if ( (currDerivative > 0 && (grad.multiply(beta)).getNorm() > PRECISION_DERIVATIVE) || currentV>previousV ){
+    while( Algorithm::MAX_ITERATIONS > iterations++ && (/*(grad.multiply(beta)).getNorm()*/lastStepLenght > PRECISION_OPTIMUM || currDerivative<0 ) ){
+        if ( currDerivative > 0 && (/*grad.multiply(beta)).getNorm()*/ lastStepLenght > PRECISION_DERIVATIVE) || currentV>previousV ){
             // "cofnij" sie do poprzedniego punktu i zrob mniejszy krok
             beta = START_BETA; // minimalny krok
+            std::cout << prevPoint << "<-- prev Point \t" << start << "<-- curr Point\n";
+            lastStepLenght = (start - prevPoint).getNorm();
             start = prevPoint+grad.multiply(beta);
             currentV = function.getValue(start);
-
             currDerivative = derivative(function, start, grad, PRECISION_DERIVATIVE);
         }else{
             if ( currentV < previousV ){
@@ -61,7 +62,6 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN grad, double stepLength ){
                     beta = std::min(MAX_BETA, beta*SMALL_REWARD);
                 }
             }
-
             prevPoint = start;
             previousV = currentV;
             start = start + grad.multiply(beta);
@@ -69,7 +69,7 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN grad, double stepLength ){
             prevDerivative = currDerivative;
             currDerivative = derivative(function, start, grad, PRECISION_DERIVATIVE );
         }
-        std::cout << currentV << " " << previousV << " " << currDerivative <<std::endl;
+        std::cout << currentV << " " << previousV << " " << currDerivative << " " << start << " " << std::endl;
 //        std::cout << "currDerivative = " << currDerivative << "\t prevDerivative = " <<prevDerivative << "\t beta = " << beta << std::endl;
     }
 
