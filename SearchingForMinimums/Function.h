@@ -13,6 +13,8 @@ class Function {
     FunctionParser parser;
     Gradient * gradient;
 
+    constexpr static const double STEP_GRADIENT=0.00005;
+
 public:
     Function(std::string &f);
     Function(){;}
@@ -21,7 +23,7 @@ public:
 
     double getValue(VectorN);
     int getVarNum();
-    VectorN getGradient(VectorN, double step = DBL_MIN);
+    VectorN getGradient(VectorN, double step = Function::STEP_GRADIENT);
 
 };
 
