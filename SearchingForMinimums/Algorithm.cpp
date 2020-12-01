@@ -31,8 +31,6 @@ double derivative(Function& function, VectorN point, VectorN direction, double s
 Point Algorithm::searchOneMinimum(VectorN start) {
     start = leaveMaxArea(start);
     VectorN gradient = function.getGradient(start);
-//    VectorN gradCorrection = getDirectionsDecrease(start);
-//    gradient = gradient+gradCorrection.multiply(START_BETA);
 
     double stepLength = START_BETA;
     unsigned int count = 0;
@@ -40,8 +38,10 @@ Point Algorithm::searchOneMinimum(VectorN start) {
         VectorN prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
         stepLength = std::max((start-prev).getNorm()/4, MIN_BETA);  //
+
         gradient = function.getGradient(start);
         ++count;
+//        if( prev == start ) break;
     }
     if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po setnym kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znajdziemy minimum
         std::cout << "zwrocono pusty punkt\n";
@@ -55,7 +55,7 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
     VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
     VectorN zero(1);
     unsigned int count = 0;
-    if(derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){ /* w tym kierunku funkcja rosnie */ return start; }
+    if(derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){ return start; } /* w tym kierunku funkcja rosnie */
     while (step.getNorm() > PRECISION_OPTIMUM/2 && count < limitIterations ){
         if ( derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){
             step = step.multiply(0.5);
@@ -120,39 +120,33 @@ bool Algorithm::ifMinimum(VectorN minCandidate) {
 void Algorithm::leaveMinimum(VectorN start) {
     double stepLength = 0.01;
     VectorN max(function.getVarNum());
-    Point min(function.getVarNum(), 0);
     for (int i = 0; i < function.getVarNum(); ++i){
         VectorN direction(function.getVarNum()) ;
         direction.setNVal(i, 1);
         max = goToMaximum(start, direction, stepLength);
-        max = max + direction.multiply(stepLength);
-        min = searchOneMinimum(max);
-        if (ifMinimum(min.getVectorN()) && minList.exists(min)!=-1 ){// jesli jest to minimum i nie ma go na liscie
-            minList.addMinimumToList(min);
+
+        while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1*PRECISION_OPTIMUM){
+            max = max + direction.multiply(stepLength);
         }
+        minList.addMinimumToList(searchOneMinimum(max));
         direction.setNVal(i, -1);
         max = goToMaximum(start, direction, stepLength);
-        max = max + direction.multiply(stepLength);
-        min = searchOneMinimum(max);
-        if (ifMinimum(min.getVectorN()) && minList.exists(min)==-1){
-            minList.addMinimumToList(min);
+        while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1*PRECISION_OPTIMUM){
+            max = max + direction.multiply(stepLength);
         }
+        minList.addMinimumToList(searchOneMinimum(max));
     }
 }
 
 
 void Algorithm::searchAllMinimums(VectorN start) {
-    int iterations = 0;
     int n = 0;
-    Point optimum(searchOneMinimum(start));
-    minList.addMinimumToList(optimum);
-    //std::cout << optimum <<"\n";
-    while (n < minList.getListMin().size() && iterations < MAX_ITERATIONS) {
-        ++iterations;
+    Point minimum = searchOneMinimum(start);
+    minList.addMinimumToList(minimum);
+    while (n < minList.getListMin().size() && n < 10) {
         leaveMinimum(minList.getListMin().at(n).getVectorN());
         ++n;
     }
-
 }
 
 

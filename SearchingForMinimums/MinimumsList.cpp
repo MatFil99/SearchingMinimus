@@ -22,7 +22,6 @@ void MinimumsList::addMinimumToList(Point point) {
             listMin.at(index) = point;
         }
          // minimum exists, not adding
-         std::cout << index;
     }{
         Point p(point);
         listMin.push_back(p);

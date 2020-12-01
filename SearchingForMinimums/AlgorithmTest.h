@@ -13,15 +13,13 @@
 
 class AlgorithmTest {
 public:
-
-
     void runTests(){
 //        testGoToMaximum();
 //        testGoToMinimum();
         testSearchOneMinimum();
 //        testAddingToList();
 //        testSearchingAllMinimus();
-
+        testSearchAllMinimums();
     }
 
     void testSearchingAllMinimus(){
@@ -109,6 +107,7 @@ public:
         // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
         //assert( expected == min || expected2 == min && start != min );
 
+
         std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min << "\n\n" ;
     }
 
@@ -125,6 +124,27 @@ public:
         assert( expected == max || expected2 == max && start != max );
 
         std::cout << "Oczekiwane maksimum = {" << expected << "; " << expected2 << "}\t Znalezione maksimum = " << max << "\n\n" ;
+
+    }
+
+//    void testSearchOneMinimum(){
+//        VectorN start(2);
+//        start.setNVal(0, -4.72225);
+//        start.setNVal(1, -3.14189);
+//        Algorithm algorithm("sin(x)+cos(y)");
+//        double val[1] = {algorithm.searchOneMinimum(start).getValue()};
+//        std::cout << std::endl << val[0];
+//        double expected[1] = {-2};
+//        assert(VectorN(1, val) == VectorN(1, expected));
+//    }
+
+    void testSearchAllMinimums(){
+        VectorN start(2);
+        start.setNVal(0, 0);
+        start.setNVal(1, 0);
+        Algorithm algorithm("cos(x)+cos(y)");
+        algorithm.searchAllMinimums(start);
+        algorithm.getMinList().printList();
     }
 };
 

@@ -10,7 +10,7 @@ public: // potem usun
     MinimumsList minList;
     Function function;
     VectorN startPoint;
-    int limitIterations = 10000; // maksymalna liczba prob poszukiwania minimum
+    int limitIterations = 1000000; // maksymalna liczba prob poszukiwania minimum
 
     double beta=START_BETA;
 
@@ -19,10 +19,12 @@ public: // potem usun
     const double MAX_BETA = 4;
     const double MIN_BETA = 0.0005;
     const double PRECISION_OPTIMUM = 0.0005;
+
     constexpr static const double START_BETA = 0.05;
     const double PRECISION_DERIVATIVE = 0.0005;
     static const int MAX_ITERATIONS = 5;
     const double ACCEPTABLE_ESTIMATION = 0.05;
+
 
 public:
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);
