@@ -1,7 +1,7 @@
 
 #include "Algorithm.h"
 #include <algorithm>
-#include <float.h>
+#include <cstdlib>
 
 
 Algorithm::Algorithm(std::string f, VectorN s):
@@ -31,16 +31,17 @@ double derivative(Function& function, VectorN point, VectorN direction, double s
 Point Algorithm::searchOneMinimum(VectorN start) {
     start = leaveMaxArea(start);
     VectorN gradient = function.getGradient(start);
-
     double stepLength = START_BETA;
     unsigned int count = 0;
     while(gradient.getNorm() > PRECISION_OPTIMUM && count < MAX_ITERATIONS ){
+
         VectorN prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
         stepLength = std::max((start-prev).getNorm()/4, MIN_BETA);  //
 
         gradient = function.getGradient(start);
         ++count;
+
 //        if( prev == start ) break;
     }
     if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po setnym kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znajdziemy minimum
@@ -56,7 +57,7 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
     VectorN zero(1);
     unsigned int count = 0;
     if(derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){ return start; } /* w tym kierunku funkcja rosnie */
-    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < limitIterations ){
+    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < LIMIT_ITERATIONS ){
         if ( derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -73,7 +74,7 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
     VectorN zero(1);
     unsigned int count = 0;
     if (derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0) {/* zly kierunek - funkcja maleje */ return start; }
-    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < 100) {
+    while (step.getNorm() > PRECISION_OPTIMUM && count < LIMIT_ITERATIONS) {
         if ( derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -82,21 +83,21 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
         }
         ++count;
     }
-    if(count == 100) {
+    if(count == LIMIT_ITERATIONS) {
         return VectorN();
     }
-    std::cout << "count = " <<count;
     return start ;
 }
 
 VectorN Algorithm::leaveMaxArea(VectorN point ) { // zwraca wektor z wartosciami 0 - gdy dany jest to kierunkowe min i 1 gdy dany kierunek nie jest minimum
     VectorN result(point), nextPoint(point.getSize()), prevPoint(point.getSize());
+    int n = 0;
     double step = START_BETA, deriv=0;
     for (int i =0; i<point.getSize(); ++i){
         VectorN direction(point.getSize());
         direction.setNVal(i, 1);
         deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
-        while( deriv > -PRECISION_OPTIMUM && deriv<=0 ){
+        while( deriv > -PRECISION_OPTIMUM && deriv<=0 && n++<MAX_ITERATIONS){
             deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
             result = result + direction.multiply(step);
         }
@@ -120,7 +121,7 @@ bool Algorithm::ifMinimum(VectorN minCandidate) {
 }
 
 void Algorithm::leaveMinimum(VectorN start) {
-    double stepLength = 0.01;
+    double stepLength = 0.1;
     VectorN max(function.getVarNum());
     for (int i = 0; i < function.getVarNum(); ++i){
         VectorN direction(function.getVarNum()) ;
@@ -146,6 +147,11 @@ void Algorithm::leaveMinimum(VectorN start) {
 
 void Algorithm::searchAllMinimums(VectorN start) {
     int n = 0;
+    VectorN zero(start.getSize());
+    if(function.getGradient(start)==zero) {
+        start = randomStartPoint(start, 10);
+        if( function.getGradient(start)==zero) { std::cout << "Prawdopodobnie funkcja stala"; return;}
+    }
     Point minimum = searchOneMinimum(start);
     minList.addMinimumToList(minimum);
     while (n < minList.getListMin().size() && n < 10) {
@@ -154,5 +160,18 @@ void Algorithm::searchAllMinimums(VectorN start) {
     }
 }
 
+VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
+    int lots = 200;
+    srand(time(NULL));
+    VectorN randomV(point.getSize()), gradient(point.getSize()), zero(point.getSize());
+    do {
+        for (int i = 0; i < point.getSize(); ++i) {
+            randomV.setNVal(i, point.getNVal(i) + rand() % rangeLength);
+        }
+        gradient = function.getGradient(randomV);
+        --lots;
+    }while(gradient==zero && lots>0);
+    return randomV;
+}
 
 

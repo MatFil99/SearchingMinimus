@@ -130,10 +130,11 @@ public:
 //    }
 
     void testSearchAllMinimums(){
-        VectorN start(2);
+        VectorN start(3);
         start.setNVal(0, 0);
-        start.setNVal(1, 0);
-        Algorithm algorithm("(x-2)^2+(y-1)^2");
+//        start.setNVal(1, 40);
+//        start.setNVal(5, 20);
+        Algorithm algorithm("tg(x)");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();
     }
