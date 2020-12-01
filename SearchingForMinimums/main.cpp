@@ -55,7 +55,7 @@
 int main()
 {
     std::string fun = "x^2+y^2";
-    AlgorithmTest algTest( fun);
+    AlgorithmTest algTest;
     algTest.runTests();
 
 

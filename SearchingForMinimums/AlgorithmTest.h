@@ -11,17 +11,14 @@
 #include "Algorithm.h"
 #include "assert.h"
 
-class AlgorithmTest: Algorithm {
+class AlgorithmTest {
 public:
-    AlgorithmTest(std::string fun):
-        Algorithm(fun)
-    {
-
-    }
 
     void runTests(){
-        testGoToMaximum();
-        testGoToMinimum();
+        //testGoToMaximum();
+        //testGoToMinimum();
+        //testSearchOneMinimum();
+        testSearchAllMinimums();
     }
 
     void testGoToMaximum(){
@@ -61,7 +58,27 @@ public:
         assert( expected == min || expected2 == min );
 
         std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min ;
-    };
+    }
+
+    void testSearchOneMinimum(){
+        VectorN start(2);
+        start.setNVal(0, -4.72225);
+        start.setNVal(1, -3.14189);
+        Algorithm algorithm("sin(x)+cos(y)");
+        double val[1] = {algorithm.searchOneMinimum(start).getValue()};
+        std::cout << std::endl << val[0];
+        double expected[1] = {-2};
+        assert(VectorN(1, val) == VectorN(1, expected));
+    }
+
+    void testSearchAllMinimums(){
+        VectorN start(2);
+        start.setNVal(0, -1);
+        start.setNVal(1, 0);
+        Algorithm algorithm("sin(x)+cos(y)");
+        algorithm.searchAllMinimums(start);
+        algorithm.getMinList().printList();
+    }
 };
 
 
