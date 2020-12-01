@@ -11,57 +11,121 @@
 #include "Algorithm.h"
 #include "assert.h"
 
-class AlgorithmTest: Algorithm {
+class AlgorithmTest {
 public:
-    AlgorithmTest(std::string fun):
-        Algorithm(fun)
-    {
+
+
+    void runTests(){
+//        testGoToMaximum();
+//        testGoToMinimum();
+        testSearchOneMinimum();
+//        testAddingToList();
+//        testSearchingAllMinimus();
 
     }
 
-    void runTests(){
-        testGoToMaximum();
-        testGoToMinimum();
+    void testSearchingAllMinimus(){
+        Algorithm algorithm("sin(x)+cos(y)");
+        VectorN start(2);
+        start.setNVal(0, 0);
+        start.setNVal(1, 1);
+        algorithm.searchAllMinimums(start);
+        algorithm.minList.printList();
+    }
+
+    void testAddingToList(){
+        Algorithm a("x^2+y^2+z^2+w^2");
+        VectorN v1(4);
+        v1.setNVal(0, 4);
+        VectorN v2(4);
+        v2.setNVal(1, 4);
+
+        Point p1(v1, 10), p2(v2, 12);
+
+        a.minList.addMinimumToList(p1);
+        a.minList.addMinimumToList(p2);
+
+        a.minList.printList();
+
+
+    }
+
+    void testSearchOneMinimum(){
+        Algorithm algorithm("sin(x)+cos(y)");
+        VectorN start(2);
+        start.setNVal(0, 0);
+        start.setNVal(1, 0);
+
+        Point minimum(algorithm.searchOneMinimum(start));
+        std::cout << minimum;
+//        if(minimum.getVectorN().ifNull())
+//            std::cout << minimum;
     }
 
     void testGoToMaximum(){
-        // dane wejsciowe: f(a,b) = -a^2-b^2; start=(-155.13, 905.23); kierunek=grad;
-        std::cout << "Test funkcji goToMaximum(start, kierunek, poczatkowyLength)\nf(a,b) = -a^2-b^2; start=(-15, 45); kierunek=grad\n";
-        VectorN start(2);
+        // testy funkcji goToMaximum
+        std::cout << "= = = = = = = = = = = = = = = = = \n=\t testy funkcji goToMaximum  =\n= = = = = = = = = = = = = = = = = \n";
+        VectorN start(2), expected(2);
+
+        // test 1
         start.setNVal(0, -155.13);
         start.setNVal(1, 905.23);
-        Algorithm algorithm("-a^2-b^2");
-        VectorN grad=algorithm.function.getGradient(start);
+        universalTestGoToMaximum( "-x^2-y^2", start, expected, 0.01);
 
-        VectorN max(algorithm.goToMaximum(start, grad, 200));
-        VectorN expected(2); // (0,0)
-        VectorN moveVector = max - start;
-        VectorN expected2(start + grad.multiply(1/grad.getNorm()).multiply(moveVector.getNorm()));
-        assert(expected==max || expected2==max);
-
-        std::cout << "Oczekiwane maksimum = {" << expected << "; " << expected2 << "\t znalezione maksimum = " << max << "\n\n";
+        // test 2
+        start.setNVal(0, 0.7);
+        start.setNVal(1, 15);
+        universalTestGoToMaximum("-a^2-b^2", start, expected);
     }
 
     void testGoToMinimum() {
-        // dane wejsciowe: f(a,b) = a^2+b^2; start=(-15, 45); kierunek=grad;
-        std::cout << "Test funkcji goToMinimum(start, kierunek, poczatkowyLength)\nf(a,b) = a^2+b^2; start=(-15, 45); kierunek=grad\n";
-        VectorN start(2);
+        std::cout << "= = = = = = = = = = = = = = = = = \n=\t testy funkcji goToMinimum  =\n= = = = = = = = = = = = = = = = = \n";
+        VectorN start(2), expected(2);
         start.setNVal(0, -154.24);
         start.setNVal(1, 450.7995);
-        Algorithm algorithm("a^2+b^2", start);
-        VectorN grad = algorithm.function.getGradient(start);
-        //std::cout <<"\n" << grad <<"\n";
+        //test 1
+        universalTestGoToMinimum( "a^2+b^2", start, expected );
 
-        VectorN min(algorithm.goToMinimum(start, grad.multiply(-1), 0.01)); // z bardzo malym krokiem startowym nie dojdziemy do minimum, ale to nic
-        VectorN expected(2);// expected=(0,0)
+        //test 2
+        start.setNVal( 0, 0.05);
+        start.setNVal(1, -0.006);
+        universalTestGoToMinimum("a^2+b^2", start, expected);
+
+        // test 3
+        VectorN start1N(1);
+        start1N.setNVal(0, 15);
+        universalTestGoToMinimum("x^2", start1N, expected);
+    }
+
+    void universalTestGoToMinimum(const std::string & function, const VectorN & start, const VectorN & expected, double stepLength=10 ){
+        std::cout << "f = " << function << "; start= " << start << " ; kierunek=grad\n";
+
+        Algorithm algorithm(function);
+        VectorN grad = algorithm.function.getGradient(start);
+        VectorN min(algorithm.goToMinimum(start, grad.multiply(1), stepLength)); // z bardzo malym krokiem startowym nie dojdziemy do minimum, ale to nic
         VectorN moveVector = min - start;   // wektor o ktory sie przesunelismy
         VectorN expected2(start+grad.multiply(-1/grad.getNorm()).multiply(moveVector.getNorm()));
 
         // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
-        assert( expected == min || expected2 == min );
+        //assert( expected == min || expected2 == min && start != min );
 
-        std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min ;
-    };
+        std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min << "\n\n" ;
+    }
+
+    void universalTestGoToMaximum(const std::string & function, const VectorN & start, const VectorN & expected, double stepLength=10){
+        std::cout << function << "; start= " << start << " ; kierunek=grad\n";
+
+        Algorithm algorithm(function);
+        VectorN grad = algorithm.function.getGradient(start);
+        VectorN max(algorithm.goToMaximum(start, grad, stepLength)); // z bardzo malym krokiem startowym nie dojdziemy do minimum, ale to nic
+        VectorN moveVector = max - start;   // wektor o ktory sie przesunelismy
+        VectorN expected2(start+grad.multiply(1/grad.getNorm()).multiply(moveVector.getNorm()));
+
+        // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
+        assert( expected == max || expected2 == max && start != max );
+
+        std::cout << "Oczekiwane maksimum = {" << expected << "; " << expected2 << "}\t Znalezione maksimum = " << max << "\n\n" ;
+    }
 };
 
 

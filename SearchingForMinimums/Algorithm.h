@@ -17,18 +17,19 @@ public: // potem usun
     const double PENALTY = 2; // kara za przekroczenie minimum
     const double SMALL_REWARD = 1.05; // nagroda za znalezienie mniejszej wartosci i uzyskanie pochodnej ponad 1.5 raza lepszej (mniejszej)
     const double MAX_BETA = 4;
+    const double MIN_BETA = 0.0005;
     const double PRECISION_OPTIMUM = 0.0005;
-    constexpr static const double START_BETA = 0.000005;
+    constexpr static const double START_BETA = 0.05;
     const double PRECISION_DERIVATIVE = 0.0005;
-    static const int MAX_ITERATIONS = 500;
+    static const int MAX_ITERATIONS = 5;
+    const double ACCEPTABLE_ESTIMATION = 0.05;
 
 public:
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);
     VectorN goToMinimum(VectorN start, VectorN grad, double stepLength);
 
-    bool checkIfMinimum(VectorN optimumCandidate);
-    void adoptBetaMin(double prevV, double currv, double prevD, double currD);
 
+    bool ifMinimum(VectorN minCandidate);
 public:
     Algorithm(std::string f, VectorN s );   // jesli chcesz, mozesz podac punkt poczatkowy, ale musisz znac wymiar problemu
     Algorithm(std::string f );  // jesli nie podasz punktu poczatkowego, wybierzemy standardpwy/lub wylosujemy
@@ -42,6 +43,7 @@ public:
 
     VectorN getStartPoint(){ return startPoint; }
 
+    VectorN leaveMaxArea(VectorN point);
 };
 
 

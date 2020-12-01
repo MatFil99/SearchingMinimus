@@ -7,11 +7,13 @@
 class MinimumsList {
     std::vector<Point> listMin;
 
-    int exists(Point point );
+
 
 public:
     void addMinimumToList( Point point );
     std::vector<Point> & getListMin();
+
+    int exists(Point point );
 
     void addElementToList(Point p);
     void printList();

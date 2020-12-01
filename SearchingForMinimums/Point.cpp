@@ -16,7 +16,7 @@ Point::Point(Point const &point) {
 }
 
 Point::~Point(){
-    delete point;
+    if(point!= nullptr) delete point;
 }
 
 VectorN Point::getVectorN() const { return *point; }
@@ -41,8 +41,9 @@ Point::Point() {
 
 std::ostream& operator<<(std::ostream& os, const Point& dt)
 {
-    const VectorN vectorN = dt.getVectorN();
-    os << vectorN;
-    os << "\n" << "value = " << dt.getValue() << "\n";
+    if(dt.getPointPointer()!= nullptr){
+        os << *dt.getPointPointer();
+        os << "\n" << "value = " << dt.getValue() << "\n";
+    }else os << "Pusty punkt";
     return os;
 }

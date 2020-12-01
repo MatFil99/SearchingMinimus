@@ -19,6 +19,7 @@ public:
     ~Point();
     double getValue()const;
     VectorN getVectorN()const;
+    VectorN* getPointPointer()const { return point; }
     Point& operator=(const Point & pPoint);
     bool operator==(const Point & point);
     bool isNull();
