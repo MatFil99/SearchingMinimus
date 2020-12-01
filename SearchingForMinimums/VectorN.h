@@ -42,10 +42,6 @@ public:
 
     bool roundEquals(const VectorN & v, int n, double acceptableDeviation) const;
 
-    void setSize(int n) { size=n; };
-
-    static const int NULL_VECTOR = -1;
-
     bool isNull() const;
 
     VectorN();

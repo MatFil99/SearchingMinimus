@@ -30,7 +30,10 @@ void MinimumsList::addMinimumToList(Point point) {
 std::vector<Point>& MinimumsList::getListMin() { return listMin; }
 
 void MinimumsList::printList() {
+    Point p;
     for(std::vector<Point>::iterator it = listMin.begin(); it < listMin.end(); it++ ){
-        std::cout << *it;
+//        std::cout << *it;
+        p = (Point)*it;
+        std::cout << p;
     }
 }

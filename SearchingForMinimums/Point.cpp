@@ -26,9 +26,10 @@ double Point::getValue()const{
 }
 
 Point& Point::operator=(const Point &pPoint) {
-    VectorN v(pPoint.getVectorN());
-    Point p(v, pPoint.getValue());
-    return p;
+    delete point;
+    point= new VectorN(pPoint.getVectorN());
+    value = pPoint.getValue();
+    return *this;
 }
 
 bool Point::isNull() {

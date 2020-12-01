@@ -17,8 +17,8 @@ public:
 //        testGoToMaximum();
 //        testGoToMinimum();
 //        testSearchOneMinimum();
-//        testAddingToList();
-        testSearchAllMinimums();
+        testAddingToList();
+//        testSearchAllMinimums();
     }
 
 
@@ -130,11 +130,11 @@ public:
 //    }
 
     void testSearchAllMinimums(){
-        VectorN start(3);
+        VectorN start(2);
         start.setNVal(0, 0);
-//        start.setNVal(1, 40);
+        start.setNVal(1, 40);
 //        start.setNVal(5, 20);
-        Algorithm algorithm("tg(x)");
+        Algorithm algorithm("cos(x)*sin(x)");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();
     }

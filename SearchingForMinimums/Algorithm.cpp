@@ -4,28 +4,10 @@
 #include <cstdlib>
 
 
-Algorithm::Algorithm(std::string f, VectorN s):
-    function(f),
-    startPoint(1),
-    minList()
-{
-}
-
 Algorithm::Algorithm(std::string f):
     function(f),
-    startPoint(function.getVarNum()),
     minList()
 {
-    // tutaj mozna wylosowac punkt
-}
-
-
-
-double derivative(Function& function, VectorN point, VectorN direction, double stepLength ){
-    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
-    VectorN start = point - step;
-    VectorN end = point + step;
-    return (function.getValue(end) - function.getValue(start))/(2*stepLength);
 }
 
 Point Algorithm::searchOneMinimum(VectorN start) {
@@ -37,7 +19,7 @@ Point Algorithm::searchOneMinimum(VectorN start) {
 
         VectorN prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
-        stepLength = std::max((start-prev).getNorm()/4, MIN_BETA);  //
+        stepLength = (start-prev).getNorm()/4;  //
 
         gradient = function.getGradient(start);
         ++count;
@@ -57,7 +39,7 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
     VectorN zero(1);
     unsigned int count = 0;
     if(derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){ return start; } /* w tym kierunku funkcja rosnie */
-    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < LIMIT_ITERATIONS ){
+    while (step.getNorm() > PRECISION_OPTIMUM && count < LIMIT_ITERATIONS ){
         if ( derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -157,6 +139,7 @@ void Algorithm::searchAllMinimums(VectorN start) {
     while (n < minList.getListMin().size() && n < 10) {
         leaveMinimum(minList.getListMin().at(n).getVectorN());
         ++n;
+        std::cout << "cos\n";
     }
 }
 
@@ -174,4 +157,9 @@ VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
     return randomV;
 }
 
-
+double derivative(Function& function, VectorN point, VectorN direction, double stepLength ){
+    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
+    VectorN start = point - step;
+    VectorN end = point + step;
+    return (function.getValue(end) - function.getValue(start))/(2*stepLength);
+}
