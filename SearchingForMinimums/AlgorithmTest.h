@@ -14,11 +14,11 @@
 class AlgorithmTest {
 public:
     void runTests(){
-//        testGoToMaximum();
-//        testGoToMinimum();
-//        testSearchOneMinimum();
+        testGoToMaximum();
+        testGoToMinimum();
+        testSearchOneMinimum();
         testAddingToList();
-//        testSearchAllMinimums();
+        testSearchAllMinimums();
     }
 
 
@@ -31,12 +31,10 @@ public:
 
         Point p1(v1, 10), p2(v2, 12);
 
-        a.minList.addMinimumToList(p1);
-        a.minList.addMinimumToList(p2);
+        a.getMinList().addMinimumToList(p1);
+        a.getMinList().addMinimumToList(p2);
 
-        a.minList.printList();
-
-
+        a.getMinList().printList();
     }
 
     void testSearchOneMinimum(){
@@ -47,8 +45,6 @@ public:
 
         Point minimum(algorithm.searchOneMinimum(start));
         std::cout << minimum;
-//        if(minimum.getVectorN().ifNull())
-//            std::cout << minimum;
     }
 
     void testGoToMaximum(){
@@ -94,11 +90,8 @@ public:
         VectorN min(algorithm.goToMinimum(start, grad.multiply(1), stepLength)); // z bardzo malym krokiem startowym nie dojdziemy do minimum, ale to nic
         VectorN moveVector = min - start;   // wektor o ktory sie przesunelismy
         VectorN expected2(start+grad.multiply(-1/grad.getNorm()).multiply(moveVector.getNorm()));
-
         // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
-        //assert( expected == min || expected2 == min && start != min );
-
-
+        assert( expected == min || expected2 == min && start != min );
         std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min << "\n\n" ;
     }
 
@@ -118,22 +111,11 @@ public:
 
     }
 
-//    void testSearchOneMinimum(){
-//        VectorN start(2);
-//        start.setNVal(0, -4.72225);
-//        start.setNVal(1, -3.14189);
-//        Algorithm algorithm("sin(x)+cos(y)");
-//        double val[1] = {algorithm.searchOneMinimum(start).getValue()};
-//        std::cout << std::endl << val[0];
-//        double expected[1] = {-2};
-//        assert(VectorN(1, val) == VectorN(1, expected));
-//    }
 
     void testSearchAllMinimums(){
         VectorN start(2);
         start.setNVal(0, 0);
         start.setNVal(1, 40);
-//        start.setNVal(5, 20);
         Algorithm algorithm("cos(x)*sin(x)");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();

@@ -1,6 +1,5 @@
 
 #include "Algorithm.h"
-#include <algorithm>
 #include <cstdlib>
 
 
@@ -16,18 +15,13 @@ Point Algorithm::searchOneMinimum(VectorN start) {
     double stepLength = START_BETA;
     unsigned int count = 0;
     while(gradient.getNorm() > PRECISION_OPTIMUM && count < MAX_ITERATIONS ){
-
         VectorN prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
-        stepLength = (start-prev).getNorm()/4;  //
-
+        stepLength = (start-prev).getNorm()/4;
         gradient = function.getGradient(start);
         ++count;
-
-//        if( prev == start ) break;
     }
     if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po setnym kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znajdziemy minimum
-        std::cout << "zwrocono pusty punkt\n";
         Point p;
         return p;
     }else
@@ -139,7 +133,6 @@ void Algorithm::searchAllMinimums(VectorN start) {
     while (n < minList.getListMin().size() && n < 10) {
         leaveMinimum(minList.getListMin().at(n).getVectorN());
         ++n;
-        std::cout << "cos\n";
     }
 }
 
