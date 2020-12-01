@@ -32,8 +32,8 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
     VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
     VectorN zero(1);
     unsigned int count = 0;
-    if(derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){ return start; } /* w tym kierunku funkcja rosnie */
-    while (step.getNorm() > PRECISION_OPTIMUM && count < LIMIT_ITERATIONS ){
+    if(derivative(function, start, direction, PRECISION_DERIVATIVE) > 0 ){ return start; } /* w tym kierunku funkcja rosnie */
+    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < LIMIT_ITERATIONS ){
         if ( derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -41,6 +41,7 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
             start = start + step;
         }
         ++count;
+
     }
     return start;
 }
