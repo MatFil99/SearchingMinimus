@@ -17,6 +17,7 @@ public:
 
     void addElementToList(Point p);
     void printList();
+    Point getFoundOptimum();
 };
 
 
