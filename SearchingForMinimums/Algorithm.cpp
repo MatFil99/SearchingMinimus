@@ -73,7 +73,7 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
     VectorN zero(1);
     unsigned int count = 0;
     if (derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0) {/* zly kierunek - funkcja maleje */ return start; }
-    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < limitIterations) {
+    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < 100) {
         if ( derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -82,6 +82,10 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
         }
         ++count;
     }
+    if(count == 100) {
+        return VectorN();
+    }
+    std::cout << "count = " <<count;
     return start ;
 }
 
@@ -97,8 +101,6 @@ VectorN Algorithm::leaveMaxArea(VectorN point ) { // zwraca wektor z wartosciami
             result = result + direction.multiply(step);
         }
     }
-
-
     return result;
 }
 
@@ -124,17 +126,20 @@ void Algorithm::leaveMinimum(VectorN start) {
         VectorN direction(function.getVarNum()) ;
         direction.setNVal(i, 1);
         max = goToMaximum(start, direction, stepLength);
-
-        while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1*PRECISION_OPTIMUM){
-            max = max + direction.multiply(stepLength);
+        if(!max.isNull()) {
+            while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM) {
+                max = max + direction.multiply(stepLength);
+            }
+            minList.addMinimumToList(searchOneMinimum(max));
+            direction.setNVal(i, -1);
         }
-        minList.addMinimumToList(searchOneMinimum(max));
-        direction.setNVal(i, -1);
         max = goToMaximum(start, direction, stepLength);
-        while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1*PRECISION_OPTIMUM){
-            max = max + direction.multiply(stepLength);
+        if(!max.isNull()) {
+            while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM) {
+                max = max + direction.multiply(stepLength);
+            }
+            minList.addMinimumToList(searchOneMinimum(max));
         }
-        minList.addMinimumToList(searchOneMinimum(max));
     }
 }
 

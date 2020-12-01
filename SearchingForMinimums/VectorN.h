@@ -7,6 +7,7 @@
 
 class VectorN {
 private:
+
     double * vec;
     int size;
 
@@ -45,7 +46,9 @@ public:
 
     static const int NULL_VECTOR = -1;
 
-    bool ifNull() const;
+    bool isNull() const;
+
+    VectorN();
 };
 
 std::ostream& operator<<(std::ostream& os, const VectorN& dt);

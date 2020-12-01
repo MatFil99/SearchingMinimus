@@ -16,20 +16,11 @@ public:
     void runTests(){
 //        testGoToMaximum();
 //        testGoToMinimum();
-        testSearchOneMinimum();
+//        testSearchOneMinimum();
 //        testAddingToList();
-//        testSearchingAllMinimus();
         testSearchAllMinimums();
     }
 
-    void testSearchingAllMinimus(){
-        Algorithm algorithm("sin(x)+cos(y)");
-        VectorN start(2);
-        start.setNVal(0, 0);
-        start.setNVal(1, 1);
-        algorithm.searchAllMinimums(start);
-        algorithm.minList.printList();
-    }
 
     void testAddingToList(){
         Algorithm a("x^2+y^2+z^2+w^2");
@@ -49,10 +40,10 @@ public:
     }
 
     void testSearchOneMinimum(){
-        Algorithm algorithm("sin(x)+cos(y)");
+        Algorithm algorithm("x^2+y^2");
         VectorN start(2);
-        start.setNVal(0, 0);
-        start.setNVal(1, 0);
+        start.setNVal(0, 100);
+        start.setNVal(1, -123);
 
         Point minimum(algorithm.searchOneMinimum(start));
         std::cout << minimum;
@@ -142,7 +133,7 @@ public:
         VectorN start(2);
         start.setNVal(0, 0);
         start.setNVal(1, 0);
-        Algorithm algorithm("cos(x)+cos(y)");
+        Algorithm algorithm("(x-2)^2+(y-1)^2");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();
     }

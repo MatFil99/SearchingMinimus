@@ -14,6 +14,12 @@ VectorN::VectorN(int n)
         vec[i] = 0;
 }
 
+VectorN::VectorN():
+    size(-1),
+    vec(nullptr)
+{// pusty wektor
+}
+
 VectorN::VectorN(int n, double vect[]){
     vec = new double [n];
     this->size = n;
@@ -116,12 +122,12 @@ bool VectorN::operator!=(const VectorN &v) const {
     return !(*this == v);
 }
 
-bool VectorN::ifNull() const{
+bool VectorN::isNull() const{
     return vec == nullptr;
 }
 
 std::ostream& operator<<(std::ostream& os, const VectorN& dt){
-    if(dt.ifNull()) return os << "Null VectorN";
+    if(dt.isNull()) return os << "Null VectorN";
     for( int i =0; i<dt.getSize(); i++){
         os << dt.getNVal(i) << ", ";
     }
