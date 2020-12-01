@@ -168,4 +168,8 @@ VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
     return randomV;
 }
 
+Point Algorithm::getFoundOptimum() {
+    return Point();
+}
+
 
