@@ -35,9 +35,11 @@ public:
 
         VectorN max(algorithm.goToMaximum(start, grad, 200));
         VectorN expected(2); // (0,0)
-        assert(expected==max);
+        VectorN moveVector = max - start;
+        VectorN expected2(start + grad.multiply(1/grad.getNorm()).multiply(moveVector.getNorm()));
+        assert(expected==max || expected2==max);
 
-        std::cout << "Oczekiwane maksimum = " << expected << "\t znalezione maksimum = " << max << "\n\n";
+        std::cout << "Oczekiwane maksimum = {" << expected << "; " << expected2 << "\t znalezione maksimum = " << max << "\n\n";
     }
 
     void testGoToMinimum() {
