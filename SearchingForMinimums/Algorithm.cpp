@@ -9,6 +9,16 @@ Algorithm::Algorithm(std::string f):
 {
 }
 
+Algorithm::Algorithm(std::string f,  int divider, int leaving_limit, double precision_optimum, double start_beta, double acceptable_estimation):
+    minList(),
+    function(f)
+{
+    BETA_DIVIDER = divider;
+    LEAVING_LIMIT = leaving_limit;
+    PRECISION_OPTIMUM = precision_optimum;
+    START_BETA = start_beta;
+    ACCEPTABLE_ESTIMATION = acceptable_estimation;
+}
 
 
 double derivative(Function& function, VectorN point, VectorN direction, double stepLength ){
@@ -26,7 +36,7 @@ Point Algorithm::searchOneMinimum(VectorN start) {
     while(gradient.getNorm() > PRECISION_OPTIMUM && count < MAX_ITERATIONS ){
         VectorN prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
-        stepLength = (start-prev).getNorm()/DIVIDER;
+        stepLength = (start-prev).getNorm()/BETA_DIVIDER;
         gradient = function.getGradient(start);
         ++count;
     }
@@ -140,7 +150,7 @@ void Algorithm::searchAllMinimums(VectorN start) {
     }
     Point minimum = searchOneMinimum(start);
     minList.addMinimumToList(minimum);
-    while (n < minList.getListMin().size() && n < 10) {
+    while (n < minList.getListMin().size() && n < LEAVING_LIMIT) {
         leaveMinimum(minList.getListMin().at(n).getVectorN());
         ++n;
     }

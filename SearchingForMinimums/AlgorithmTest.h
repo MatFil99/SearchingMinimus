@@ -11,10 +11,10 @@ class AlgorithmTest {
 public:
     void runTests(){
 
-        testGoToMaximum();
-        testGoToMinimum();
-        testSearchOneMinimum();
-        testAddingToList();
+        // testGoToMaximum();
+        // testGoToMinimum();
+        // testSearchOneMinimum();
+        // testAddingToList();
         testSearchAllMinimums();
     }
 
@@ -113,16 +113,26 @@ public:
 
 
     void testSearchAllMinimums(){
+        std::string function = "20+x^2-10*cos(2*3.14*x)+y^2-10*cos(2*3.14*y)";
+        double x1 = 4;
+        double x2 = 3;
+        int divider = 8;
+        int leaving_minimum = 500;
+        double precision_optimum = 0.01;
+        double start_beta = 0.01;
+        double acceptable_estimation = 0.05;
+
         VectorN start(2);
-        start.setNVal(0, 1);
-        start.setNVal(1, 40);
+        start.setNVal(0, x1);
+        start.setNVal(1, x2);
         //start.setNVal(5, 20);
-        Algorithm algorithm("20+x^2-10*cos(2*3.14*x)+y^2-10*cos(2*3.14*y)");
+        Algorithm algorithm(function, divider, leaving_minimum, precision_optimum, start_beta, acceptable_estimation);
         algorithm.searchAllMinimums(start);
-        algorithm.getMinList().printList();
-        std::cout << algorithm.getFoundOptimum();
+        std::cout << function << "\n";
+        // algorithm.getMinList().printList();
+        std::cout << "wyznaczone optimum\n" << algorithm.getFoundOptimum();
     }
 };
 
 
-#endif //SEARCHINGFORMINIMUMS_ALGORITHMTEST_H
+#endif //SEARCHINGFORMINIMUMS_ALmakeGORITHMTEST_H
