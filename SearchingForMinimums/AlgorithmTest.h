@@ -117,7 +117,7 @@ public:
         start.setNVal(0, 1);
         start.setNVal(1, 40);
         //start.setNVal(5, 20);
-        Algorithm algorithm("20+x^2-10*cos(2*3.14*x)+2+y^2-10*cos(2*3.14*y)");
+        Algorithm algorithm("20+x^2-10*cos(2*3.14*x)+y^2-10*cos(2*3.14*y)");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();
         std::cout << algorithm.getFoundOptimum();

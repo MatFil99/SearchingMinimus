@@ -148,7 +148,7 @@ void Algorithm::searchAllMinimums(VectorN start) {
 
 VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
     int lots = 200;
-    srand(time(NULL));
+    srand(/*time*/(NULL));
     VectorN randomV(point.getSize()), gradient(point.getSize()), zero(point.getSize());
     do {
         for (int i = 0; i < point.getSize(); ++i) {
