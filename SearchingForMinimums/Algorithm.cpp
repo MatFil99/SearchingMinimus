@@ -3,10 +3,27 @@
 #include <cstdlib>
 
 
+Algorithm::Algorithm(std::string f, VectorN s):
+    function(f),
+    startPoint(1),
+    minList()
+{
+}
+
 Algorithm::Algorithm(std::string f):
     minList(),
     function(f)
 {
+    // tutaj mozna wylosowac punkt
+}
+
+
+
+double derivative(Function& function, VectorN point, VectorN direction, double stepLength ){
+    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
+    VectorN start = point - step;
+    VectorN end = point + step;
+    return (function.getValue(end) - function.getValue(start))/(2*stepLength);
 }
 
 Point Algorithm::searchOneMinimum(VectorN start) {
@@ -139,7 +156,7 @@ void Algorithm::searchAllMinimums(VectorN start) {
 
 VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
     int lots = 200;
-    srand(time(NULL));
+    srand((NULL));
     VectorN randomV(point.getSize()), gradient(point.getSize()), zero(point.getSize());
     do {
         for (int i = 0; i < point.getSize(); ++i) {
@@ -151,9 +168,8 @@ VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
     return randomV;
 }
 
-double derivative(Function& function, VectorN point, VectorN direction, double stepLength ){
-    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
-    VectorN start = point - step;
-    VectorN end = point + step;
-    return (function.getValue(end) - function.getValue(start))/(2*stepLength);
+Point Algorithm::getFoundOptimum() {
+    return minList.getFoundOptimum();
 }
+
+

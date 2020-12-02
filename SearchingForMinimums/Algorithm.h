@@ -9,6 +9,8 @@ class Algorithm {
 public:
     MinimumsList minList;
     Function function;
+    VectorN startPoint;
+//    int limitIterations = 1000000; // maksymalna liczba prob poszukiwania minimum
 
     const unsigned int LIMIT_ITERATIONS = 100000;               // maksymalna liczba iteracji w poszukiwaniu optimum kierunkowego
     const unsigned int MAX_ITERATIONS = 20;                     // maksymalna liczba wykonanych minimalizacji kierunkowych - zygzakow
@@ -21,15 +23,22 @@ public:
 
     Algorithm(std::string f );  // 
 
+public:
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);
     VectorN goToMinimum(VectorN start, VectorN grad, double stepLength);
     bool ifMinimum(VectorN minCandidate);
     void searchAllMinimums(VectorN start);    //
     Point searchOneMinimum(VectorN start);    // znajduje pojedyncze minimum
-    void leaveMinimum(VectorN start);
+
+
+
     MinimumsList getMinList(){ return minList; }
+
+    VectorN getStartPoint(){ return startPoint; }
+
     VectorN leaveMaxArea(VectorN point);
-    VectorN randomStartPoint(VectorN point, int rangeLength);
+
+    Point getFoundOptimum();
 };
 
 double derivative(Function& function, VectorN point, VectorN direction, double stepLength );

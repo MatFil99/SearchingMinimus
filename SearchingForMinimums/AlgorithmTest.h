@@ -1,7 +1,3 @@
-//
-// Created by student on 29.11.2020.
-//
-
 #ifndef SEARCHINGFORMINIMUMS_ALGORITHMTEST_H
 #define SEARCHINGFORMINIMUMS_ALGORITHMTEST_H
 
@@ -14,10 +10,11 @@
 class AlgorithmTest {
 public:
     void runTests(){
-        testGoToMaximum();
-        testGoToMinimum();
-        testSearchOneMinimum();
-        testAddingToList();
+
+        //testGoToMaximum();
+        //testGoToMinimum();
+        //testSearchOneMinimum();
+        //testAddingToList();
         testSearchAllMinimums();
     }
 
@@ -117,11 +114,13 @@ public:
 
     void testSearchAllMinimums(){
         VectorN start(2);
-        start.setNVal(0, 0);
+        start.setNVal(0, 1);
         start.setNVal(1, 40);
-        Algorithm algorithm("cos(x)*sin(x)");
+        //start.setNVal(5, 20);
+        Algorithm algorithm("20+x^2-10*cos(2*3.14*x)+2+y^2-10*cos(2*3.14*y)");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();
+        std::cout << algorithm.getFoundOptimum();
     }
 };
 
