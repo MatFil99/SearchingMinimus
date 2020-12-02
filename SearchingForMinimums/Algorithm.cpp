@@ -3,16 +3,8 @@
 #include <cstdlib>
 
 
-Algorithm::Algorithm(std::string f, VectorN s):
-    function(f),
-    startPoint(1),
-    minList()
-{
-}
-
 Algorithm::Algorithm(std::string f):
     function(f),
-    startPoint(function.getVarNum()),
     minList()
 {
     // tutaj mozna wylosowac punkt
