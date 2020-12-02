@@ -18,7 +18,7 @@ Point Algorithm::searchOneMinimum(VectorN start) {
     while(gradient.getNorm() > PRECISION_OPTIMUM && count < MAX_ITERATIONS ){
         VectorN prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
-        stepLength = (start-prev).getNorm()/4;
+        stepLength = (start-prev).getNorm()/DIVIDER;
         gradient = function.getGradient(start);
         ++count;
     }
@@ -52,7 +52,7 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
     VectorN zero(1);
     unsigned int count = 0;
     if (derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0) {/* zly kierunek - funkcja maleje */ return start; }
-    while (step.getNorm() > PRECISION_OPTIMUM && count < LIMIT_ITERATIONS) {
+    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < LIMIT_ITERATIONS) {
         if ( derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -75,7 +75,7 @@ VectorN Algorithm::leaveMaxArea(VectorN point ) { // zwraca wektor z wartosciami
         VectorN direction(point.getSize());
         direction.setNVal(i, 1);
         deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
-        while( deriv > -PRECISION_OPTIMUM && deriv<=0 && n++<MAX_ITERATIONS){
+        while( deriv > -PRECISION_OPTIMUM && deriv<=0 && n++<LEAVE_MAXIMUM_AREA_ITERATIONS){
             deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
             result = result + direction.multiply(step);
         }

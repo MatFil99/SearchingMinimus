@@ -31,4 +31,4 @@ VectorN.o: VectorN.cpp VectorN.h
 	g++ -c $(CFLAGS) VectorN.cpp VectorN.h
 
 clear:
-	rm -rf *o *gch Search
+	rm -rf *.o *.gch Search /fparser4.5.2/*.o
