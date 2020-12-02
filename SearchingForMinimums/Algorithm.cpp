@@ -7,7 +7,6 @@ Algorithm::Algorithm(std::string f):
     minList(),
     function(f)
 {
-    // tutaj mozna wylosowac punkt
 }
 
 
