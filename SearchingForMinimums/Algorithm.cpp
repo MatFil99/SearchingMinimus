@@ -4,10 +4,9 @@
 
 
 Algorithm::Algorithm(std::string f):
-    minList()
+    minList(),
+    function(f)
 {
-    Function function(f);
-    // MinimumsList minList();
 }
 
 Point Algorithm::searchOneMinimum(VectorN start) {
@@ -52,7 +51,7 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
     VectorN zero(1);
     unsigned int count = 0;
     if (derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0) {/* zly kierunek - funkcja maleje */ return start; }
-    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < LIMIT_ITERATIONS) {
+    while (step.getNorm() > PRECISION_OPTIMUM && count < LIMIT_ITERATIONS) {
         if ( derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie

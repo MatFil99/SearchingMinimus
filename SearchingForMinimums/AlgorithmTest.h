@@ -60,7 +60,7 @@ public:
         // test 2
         start.setNVal(0, 0.7);
         start.setNVal(1, 15);
-        universalTestGoToMaximum("-a^2-b^2", start, expected);
+        // universalTestGoToMaximum("-a^2-b^2", start, expected);
     }
 
     void testGoToMinimum() {

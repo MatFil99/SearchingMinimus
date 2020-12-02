@@ -1,10 +1,10 @@
 CFLAGS=-Wall -pedantic -std=c++11
 		
 compile: main.o ./fparser4.5.2/fparser.o Algorithm.o AlgorithmTest.h Function.o FunctionTest.h Gradient.o MinimumsList.o Point.o TestPoint.o VectorN.o
-	g++ $(CFLAGS) main.o ./fparser4.5.2/examples/fparser.o Algorithm.o Function.o FunctionTest.h AlgorithmTest.h Gradient.o MinimumsList.o Point.o TestPoint.o VectorN.o -o Search
+	g++ $(CFLAGS) main.o ./fparser4.5.2/fparser.o Algorithm.o Function.o FunctionTest.h AlgorithmTest.h Gradient.o MinimumsList.o Point.o TestPoint.o VectorN.o -o Search
 
-fparser.o: ./fparser4.5.2/fparser.cc ./fparser4.5.2/fparser.hh
-	g++ ./fparser4.5.2/fparser.cc ./fparser4.5.2/fparser.hh
+fparser.o: ./fparser4.5.2/fparser.cc ./fparser4.5.2/fparser.hh fpconfig.hh ./fparser4.5.2/extrasrc/fpaux.hh ./fparser4.5.2/extrasrc/fptypes.hh
+	g++ ./fparser4.5.2/fparser.cc ./fparser4.5.2/fparser.hh fpconfig.hh ./fparser4.5.2/extrasrc/fpaux.hh ./fparser4.5.2/extrasrc/fptypes.hh
 
 main.o: main.cpp
 	g++ -c $(CFLAGS) main.cpp
@@ -31,4 +31,4 @@ VectorN.o: VectorN.cpp VectorN.h
 	g++ -c $(CFLAGS) VectorN.cpp VectorN.h
 
 clear:
-	rm -rf *.o *.gch Search /fparser4.5.2/*.o
+	rm -rf *.o *.gch Search fparser4.5.2/*.o
