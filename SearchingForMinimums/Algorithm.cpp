@@ -3,13 +3,6 @@
 #include <cstdlib>
 
 
-Algorithm::Algorithm(std::string f, VectorN s):
-    function(f),
-    startPoint(1),
-    minList()
-{
-}
-
 Algorithm::Algorithm(std::string f):
     minList(),
     function(f)
@@ -156,7 +149,7 @@ void Algorithm::searchAllMinimums(VectorN start) {
 
 VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){
     int lots = 200;
-    srand((NULL));
+    srand(time(NULL));
     VectorN randomV(point.getSize()), gradient(point.getSize()), zero(point.getSize());
     do {
         for (int i = 0; i < point.getSize(); ++i) {

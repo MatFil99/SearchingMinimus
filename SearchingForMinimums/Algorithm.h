@@ -30,8 +30,8 @@ public:
     void searchAllMinimums(VectorN start);    //
     Point searchOneMinimum(VectorN start);    // znajduje pojedyncze minimum
 
-
-
+    VectorN randomStartPoint(VectorN point, int rangeLength);
+    void leaveMinimum(VectorN start);
     MinimumsList getMinList(){ return minList; }
 
     VectorN getStartPoint(){ return startPoint; }

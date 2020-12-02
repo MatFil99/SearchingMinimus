@@ -11,10 +11,10 @@ class AlgorithmTest {
 public:
     void runTests(){
 
-        //testGoToMaximum();
-        //testGoToMinimum();
-        //testSearchOneMinimum();
-        //testAddingToList();
+        testGoToMaximum();
+        testGoToMinimum();
+        testSearchOneMinimum();
+        testAddingToList();
         testSearchAllMinimums();
     }
 
