@@ -7,7 +7,7 @@
 int MinimumsList::exists(Point point ) {
     // check if point exist in list
     int exist = -1;
-    for(int i=0; i<listMin.size() && exist==-1; ++i) {
+    for(unsigned int i=0; i<listMin.size() && exist==-1; ++i) {
         if (listMin.at(i) == point) exist = i;
     }
     return exist;

@@ -92,7 +92,7 @@ public:
         VectorN expected2(start+grad.multiply(-1/grad.getNorm()).multiply(moveVector.getNorm()));
 
         // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
-        assert( expected == min || expected2 == min && start != min );
+        assert( expected == min || (expected2 == min && start != min) );
 
 
         std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min << "\n\n" ;
@@ -108,7 +108,7 @@ public:
         VectorN expected2(start+grad.multiply(1/grad.getNorm()).multiply(moveVector.getNorm()));
 
         // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
-        assert( expected == max || expected2 == max && start != max );
+        assert( expected == max || (expected2 == max && start != max) );
 
         std::cout << "Oczekiwane maksimum = {" << expected << "; " << expected2 << "}\t Znalezione maksimum = " << max << "\n\n" ;
 

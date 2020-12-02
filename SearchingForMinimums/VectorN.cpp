@@ -15,9 +15,9 @@ VectorN::VectorN(int n)
 }
 
 VectorN::VectorN():
-    size(-1),
-    vec(nullptr)
+    size(-1)
 {// pusty wektor
+    vec = nullptr;
 }
 
 VectorN::VectorN(int n, double vect[]){

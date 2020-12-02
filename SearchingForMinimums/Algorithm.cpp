@@ -4,9 +4,10 @@
 
 
 Algorithm::Algorithm(std::string f):
-    function(f),
     minList()
 {
+    Function function(f);
+    // MinimumsList minList();
 }
 
 Point Algorithm::searchOneMinimum(VectorN start) {
@@ -68,7 +69,7 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
 
 VectorN Algorithm::leaveMaxArea(VectorN point ) { // zwraca wektor z wartosciami 0 - gdy dany jest to kierunkowe min i 1 gdy dany kierunek nie jest minimum
     VectorN result(point), nextPoint(point.getSize()), prevPoint(point.getSize());
-    int n = 0;
+    unsigned int n = 0;
     double step = START_BETA, deriv=0;
     for (int i =0; i<point.getSize(); ++i){
         VectorN direction(point.getSize());
@@ -123,7 +124,7 @@ void Algorithm::leaveMinimum(VectorN start) {
 
 
 void Algorithm::searchAllMinimums(VectorN start) {
-    int n = 0;
+    unsigned int n = 0;
     VectorN zero(start.getSize());
     if(function.getGradient(start)==zero) {
         start = randomStartPoint(start, 10);
