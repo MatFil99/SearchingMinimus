@@ -8,9 +8,19 @@
 #include "AlgorithmTest.h"
 
 
-int main(int argc, char* argv[])
+int main()
 {
 
+    
+        // Algorithm a = Algorithm("x^2+y^2", divider, leaving_limit, precision_optimum, start_beta, acceptable_estimation);
+        // VectorN start = VectorN(2);
+        // start.setNVal(0, x1);
+        // start.setNVal(1, x2);
+        // a.searchAllMinimums(start);
+        // a.getMinList().printList();
+        // std::cout << a.getFoundOptimum();
+        // std::cout << "Podaj wszystkie parametry algorytmu\n";
+    
     AlgorithmTest algTest;
     algTest.runTests();
 
