@@ -1,7 +1,3 @@
-//
-// Created by student on 29.11.2020.
-//
-
 #ifndef SEARCHINGFORMINIMUMS_ALGORITHMTEST_H
 #define SEARCHINGFORMINIMUMS_ALGORITHMTEST_H
 
@@ -15,10 +11,10 @@ class AlgorithmTest {
 public:
     void runTests(){
 
-        testGoToMaximum();
-        testGoToMinimum();
-        testSearchOneMinimum();
-        testAddingToList();
+        //testGoToMaximum();
+        //testGoToMinimum();
+        //testSearchOneMinimum();
+        //testAddingToList();
         testSearchAllMinimums();
     }
 
@@ -88,11 +84,14 @@ public:
 
         Algorithm algorithm(function);
         VectorN grad = algorithm.function.getGradient(start);
-        VectorN min(algorithm.goToMinimum(start, grad.multiply(1), stepLength)); // z bardzo malym krokiem startowym nie dojdziemy do minimum, ale to nic
+        VectorN min(algorithm.goToMinimum(start, grad.multiply(-1), stepLength)); // z bardzo malym krokiem startowym nie dojdziemy do minimum, ale to nic
         VectorN moveVector = min - start;   // wektor o ktory sie przesunelismy
         VectorN expected2(start+grad.multiply(-1/grad.getNorm()).multiply(moveVector.getNorm()));
+
         // albo osiagnelismy minimum, albo kierowalismy sie wzdluz gradientu i przekroczylismy limit iteracji
         assert( expected == min || expected2 == min && start != min );
+
+
         std::cout << "Oczekiwane minimum = {" << expected << "; " << expected2 << "}\t Znalezione minimum = " << min << "\n\n" ;
     }
 
@@ -121,7 +120,7 @@ public:
         Algorithm algorithm("20+x^2-10*cos(2*3.14*x)+2+y^2-10*cos(2*3.14*y)");
         algorithm.searchAllMinimums(start);
         algorithm.getMinList().printList();
-        algorithm.getFoundOptimum();
+        std::cout << algorithm.getFoundOptimum();
     }
 };
 

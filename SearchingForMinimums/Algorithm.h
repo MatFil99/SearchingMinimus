@@ -23,6 +23,8 @@ public:
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);
     VectorN goToMinimum(VectorN start, VectorN grad, double stepLength);
     bool ifMinimum(VectorN minCandidate);
+    VectorN randomStartPoint(VectorN point, int rangeLength);
+    void leaveMinimum(VectorN start);
 public:
     Algorithm(std::string f, VectorN s );   // jesli chcesz, mozesz podac punkt poczatkowy, ale musisz znac wymiar problemu
     Algorithm(std::string f );  // jesli nie podasz punktu poczatkowego, wybierzemy standardpwy/lub wylosujemy
@@ -30,15 +32,13 @@ public:
     void searchAllMinimums(VectorN start);    //
     Point searchOneMinimum(VectorN start);    // znajduje pojedyncze minimum
 
-    void leaveMinimum(VectorN start);
+
 
     MinimumsList getMinList(){ return minList; }
 
     VectorN getStartPoint(){ return startPoint; }
 
     VectorN leaveMaxArea(VectorN point);
-
-    VectorN randomStartPoint(VectorN point, int rangeLength);
 
     Point getFoundOptimum();
 };
