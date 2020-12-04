@@ -70,9 +70,18 @@ int main(int argc, char* argv[])
     struct UserParameters uPar=readUserArguments(argc, argv);
 
     if (correctParameters(uPar)){
+        double tab[2] = { 0, 0 };
+        double val = 0;
+        VectorN v(2, tab);
+        Point min(v, val);
+
         Algorithm algorithm(uPar.function, uPar.divider, uPar.leaving_minimum, uPar.precision_optimum, uPar.start_beta, uPar.acceptable_estimation, uPar.dim_of_vec);
         algorithm.searchAllMinimums(uPar.vec);
-        std::cout << algorithm.getFoundOptimum();
+        Point min_found = algorithm.getFoundOptimum();
+        std::cout << min_found;
+        // std::cout << (min_found.getVectorN()-min.getVectorN()).getNorm() << "\n";
+        // std::cout << std::abs(min.getValue-min_found.getValue);
+        // std::cout << algorithm.getMinList().getListMin().size();
     }
 
 

@@ -40,11 +40,11 @@ double derivative(Function& function, VectorN point, VectorN direction, double s
 
 Point Algorithm::searchOneMinimum(VectorN start) {
     start = leaveMaxArea(start);
-    VectorN gradient = function.getGradient(start);
+    VectorN gradient = function.getGradient(start), prev(start);
     double stepLength = START_BETA;
     unsigned int count = 0;
-    while(gradient.getNorm() > PRECISION_OPTIMUM && count < MAX_ITERATIONS ){
-        VectorN prev = start;
+    while((gradient.getNorm() > PRECISION_OPTIMUM || (start-prev).getNorm()> PRECISION_OPTIMUM) && count < MAX_ITERATIONS ){
+        prev = start;
         start = goToMinimum(start, gradient.multiply(-1), stepLength);   // znajduje minimum w kierunku gradientu, minimalizuje funkcje wzgledem beta
         stepLength = (start-prev).getNorm()/BETA_DIVIDER;
         gradient = function.getGradient(start);
@@ -111,7 +111,7 @@ VectorN Algorithm::leaveMaxArea(VectorN point ) { // zwraca wektor z wartosciami
 
 bool Algorithm::ifMinimum(VectorN minCandidate) {
     double prevVal = 0, nextVal = 0, minCandidateVal = function.getValue(minCandidate);
-    double step = START_BETA;
+    double step = PRECISION_DERIVATIVE;
     for (int i=0; i<minCandidate.getSize(); ++i){
         VectorN v(minCandidate.getSize());
         v.setNVal(i, 1);
@@ -133,18 +133,12 @@ void Algorithm::leaveMinimum(VectorN start) {
         max = goToMaximum(start, direction, stepLength);
         if(!max.isNull()) {
             max = leaveMaxArea(max);
-            // while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM && ) {
-            //     max = max + direction.multiply(stepLength);
-            // }
             minList.addMinimumToList(searchOneMinimum(max));
             direction.setNVal(i, -1);
         }
         max = goToMaximum(start, direction, stepLength);
         if(!max.isNull()) {
             max = leaveMaxArea(max);
-            // while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM) {
-            //     max = max + direction.multiply(stepLength);
-            // }
             minList.addMinimumToList(searchOneMinimum(max));
         }
     }
