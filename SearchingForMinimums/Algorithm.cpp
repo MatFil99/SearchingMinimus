@@ -51,18 +51,17 @@ Point Algorithm::searchOneMinimum(VectorN start) {
         ++count;
     }
     if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po setnym kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znajdziemy minimum
-        Point p = Point();
-        return p;
+        return Point();
     }
     return Point(start, function.getValue(start));
 }
 
 VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLength){
-    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
+    VectorN step = direction.multiply(1/direction.getNorm()).multiply(std::max(stepLength, PRECISION_OPTIMUM));
     VectorN zero(1);
     unsigned int count = 0;
     if(derivative(function, start, direction, PRECISION_DERIVATIVE) > 0 ){ return start; } /* w tym kierunku funkcja rosnie */
-    while (step.getNorm() > PRECISION_OPTIMUM/2 && count < LIMIT_ITERATIONS ){
+    while ((step.getNorm() > PRECISION_OPTIMUM/2 || derivative(function, start+step,direction,PRECISION_DERIVATIVE)<=0) && count < LIMIT_ITERATIONS ){ // dodany warunek pochodnej
         if ( derivative(function, start + step, direction, PRECISION_DERIVATIVE) > 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
@@ -75,11 +74,11 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
 }
 
 VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLength){
-    VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
+    VectorN step = direction.multiply(1/direction.getNorm()).multiply(std::max(stepLength, PRECISION_OPTIMUM));
     VectorN zero(1);
     unsigned int count = 0;
     if (derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0) {/* zly kierunek - funkcja maleje */ return start; }
-    while (step.getNorm() > PRECISION_OPTIMUM && count < LIMIT_ITERATIONS) {
+    while ((step.getNorm() > PRECISION_OPTIMUM/2 || derivative(function, start+step,direction,PRECISION_DERIVATIVE)>=0) && count < LIMIT_ITERATIONS) { // tutaj dodalem warunek pochodnej
         if ( derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0 ){
             step = step.multiply(0.5);
             // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
