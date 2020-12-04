@@ -20,6 +20,16 @@ Algorithm::Algorithm(std::string f,  int divider, int leaving_limit, double prec
     ACCEPTABLE_ESTIMATION = acceptable_estimation;
 }
 
+Algorithm::Algorithm(std::string f,  int divider, int leaving_limit, double precision_optimum, double start_beta, double acceptable_estimation, int dimVec):
+    minList(),
+    function(f, dimVec)
+{
+    BETA_DIVIDER = divider;
+    LEAVING_LIMIT = leaving_limit;
+    PRECISION_OPTIMUM = precision_optimum;
+    START_BETA = start_beta;
+    ACCEPTABLE_ESTIMATION = acceptable_estimation;
+}
 
 double derivative(Function& function, VectorN point, VectorN direction, double stepLength ){
     VectorN step = direction.multiply(1/direction.getNorm()).multiply(stepLength);
@@ -41,9 +51,9 @@ Point Algorithm::searchOneMinimum(VectorN start) {
         ++count;
     }
     if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po setnym kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znajdziemy minimum
-        Point p;
+        Point p = Point();
         return p;
-    }else
+    }
     return Point(start, function.getValue(start));
 }
 
@@ -60,7 +70,6 @@ VectorN Algorithm::goToMinimum(VectorN start, VectorN direction, double stepLeng
             start = start + step;
         }
         ++count;
-
     }
     return start;
 }
@@ -124,17 +133,19 @@ void Algorithm::leaveMinimum(VectorN start) {
         direction.setNVal(i, 1);
         max = goToMaximum(start, direction, stepLength);
         if(!max.isNull()) {
-            while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM) {
-                max = max + direction.multiply(stepLength);
-            }
+            max = leaveMaxArea(max);
+            // while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM && ) {
+            //     max = max + direction.multiply(stepLength);
+            // }
             minList.addMinimumToList(searchOneMinimum(max));
             direction.setNVal(i, -1);
         }
         max = goToMaximum(start, direction, stepLength);
         if(!max.isNull()) {
-            while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM) {
-                max = max + direction.multiply(stepLength);
-            }
+            max = leaveMaxArea(max);
+            // while (derivative(function, max, direction, PRECISION_DERIVATIVE) > -1 * PRECISION_OPTIMUM) {
+            //     max = max + direction.multiply(stepLength);
+            // }
             minList.addMinimumToList(searchOneMinimum(max));
         }
     }
@@ -143,7 +154,7 @@ void Algorithm::leaveMinimum(VectorN start) {
 
 void Algorithm::searchAllMinimums(VectorN start) {
     unsigned int n = 0;
-    VectorN zero(start.getSize());
+    VectorN zero(start.getSize()), gradient(start.getSize());
     if(function.getGradient(start)==zero) {
         start = randomStartPoint(start, 10);
         if( function.getGradient(start)==zero) { std::cout << "Prawdopodobnie funkcja stala"; return;}

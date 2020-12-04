@@ -30,17 +30,22 @@ VectorN::VectorN(int n, double vect[]){
 
 VectorN::VectorN( const VectorN & vectN ){
     size = vectN.getSize();
-    vec = new double [vectN.getSize()];
-    for(int i = 0; i < vectN.getSize(); i++){
-        this->setNVal(i, vectN.getNVal(i));
+    if( vectN.getTab()!=nullptr ){
+        vec = new double [vectN.getSize()];
+        for(int i = 0; i < vectN.getSize(); i++){
+            this->setNVal(i, vectN.getNVal(i));
+        }
+    }else{
+        vec=nullptr;
+        size=-1;
     }
 }
 
 VectorN::~VectorN() {
-    delete [] vec;
+    if( vec!=nullptr ) delete [] vec;
 }
 
-double *VectorN::getTab() {
+double *VectorN::getTab() const {
     return vec;
 }
 
@@ -66,6 +71,7 @@ double VectorN::getNorm() {
 }
 
 bool VectorN::operator==(const VectorN &v) const {
+    
     for(int i=0; i<v.getSize(); i++){
         if(!this->roundEquals(v, i, ACCEPTABLEDEVIATION)){// accaptabledeviation could adopt, but now it is constant
             return false;
@@ -75,7 +81,7 @@ bool VectorN::operator==(const VectorN &v) const {
 }
 
 VectorN& VectorN::operator=(const VectorN &v) {
-    delete[] vec;
+    if(vec!=nullptr) delete[] vec;
     size = v.getSize();
     if( size < 0 ){
         size = -1;

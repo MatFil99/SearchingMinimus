@@ -7,6 +7,15 @@ Function::Function(std::string &f) {
     gradient = new Gradient(this);
 }
 
+Function::Function(std::string &f, int dimVec){
+    parser.ParseAndDeduceVariables(f,&varNum);
+    if(varNum!=dimVec){
+        perror("Wrong function or start point!");
+        exit(1);
+    }
+    gradient = new Gradient(this);
+}
+
 
 double Function::getValue(VectorN point) {
     //sprawdzic czy punkt tego samego wymiaru co funkcja

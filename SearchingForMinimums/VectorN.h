@@ -19,7 +19,7 @@ public:
     VectorN( const VectorN & vectN );
     ~VectorN();
 
-    double * getTab();
+    double * getTab()const;
 
     void setNVal(int n, double val);
 

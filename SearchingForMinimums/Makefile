@@ -1,4 +1,4 @@
-CFLAGS=-Wall -pedantic -std=c++11
+CFLAGS=-Wall -pedantic -std=c++11 -g
 		
 compile: main.o ./fparser4.5.2/fparser.o Algorithm.o AlgorithmTest.h Function.o FunctionTest.h Gradient.o MinimumsList.o Point.o TestPoint.o VectorN.o
 	g++ $(CFLAGS) main.o ./fparser4.5.2/fparser.o Algorithm.o Function.o FunctionTest.h AlgorithmTest.h Gradient.o MinimumsList.o Point.o TestPoint.o VectorN.o -o Search
@@ -7,7 +7,7 @@ fparser.o: ./fparser4.5.2/fparser.cc ./fparser4.5.2/fparser.hh fpconfig.hh ./fpa
 	g++ ./fparser4.5.2/fparser.cc ./fparser4.5.2/fparser.hh fpconfig.hh ./fparser4.5.2/extrasrc/fpaux.hh ./fparser4.5.2/extrasrc/fptypes.hh
 
 main.o: main.cpp
-	g++ -c $(CFLAGS) main.cpp
+	g++ -c $(CFLAGS) main.cpp VectorN.h
 
 Algorithm.o: Algorithm.cpp Algorithm.h
 	g++ -c $(CFLAGS) Algorithm.cpp Algorithm.h

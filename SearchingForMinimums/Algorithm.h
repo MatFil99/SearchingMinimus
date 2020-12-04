@@ -14,6 +14,7 @@ public:
     unsigned int LIMIT_ITERATIONS = 100000;               // maksymalna liczba iteracji w poszukiwaniu optimum kierunkowego
     unsigned int MAX_ITERATIONS = 20;                     // maksymalna liczba wykonanych minimalizacji kierunkowych - zygzakow
     unsigned int LEAVE_MAXIMUM_AREA_ITERATIONS = 20;      // maksymalna liczba iteracji, podczas opuszczania maksimum
+    unsigned int LEAVE_MINIMUM_AREA_ITERATIONS = 1000;    // maksymalna liczba iteracji opuszczania obszaru minimum
     unsigned int BETA_DIVIDER = 4;
     unsigned int LEAVING_LIMIT = 20;                      // maksymalna liczba minimow, ktore opuszczamy w celu poszukiwania nastpnych
     double PRECISION_OPTIMUM = 0.00005;                   // precyzja z jaka liczymy optimum (
@@ -23,6 +24,7 @@ public:
     
     Algorithm(std::string f );  // 
     Algorithm(std::string f, int divider, int leaving_limit, double precision_optimum, double start_beta, double acceptable_estimation);
+    Algorithm(std::string f, int divider, int leaving_limit, double precision_optimum, double start_beta, double acceptable_estimation, int dimVec);
 
     VectorN goToMaximum(VectorN start, VectorN direction, double stepLength);   // szuka maksimum w kierunku direction
     VectorN goToMinimum(VectorN start, VectorN direction, double stepLength);        // szuka minimum w kierunku 

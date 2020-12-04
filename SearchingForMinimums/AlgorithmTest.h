@@ -114,12 +114,12 @@ public:
 
     void testSearchAllMinimums(){
         std::string function = "20+x^2-10*cos(2*3.14*x)+y^2-10*cos(2*3.14*y)";
-        double x1 = 4;
-        double x2 = 3;
-        int divider = 8;
-        int leaving_minimum = 500;
-        double precision_optimum = 0.01;
-        double start_beta = 0.01;
+        double x1 = 1;
+        double x2 = 5;
+        int divider = 4;
+        int leaving_minimum = 100;
+        double precision_optimum = 0.0000005;
+        double start_beta = 0.05;
         double acceptable_estimation = 0.05;
 
         VectorN start(2);

@@ -17,6 +17,7 @@ class Function {
 
 public:
     Function(std::string &f);
+    Function(std::string &f, int dimVec);
     Function(){;}
 
     ~Function();

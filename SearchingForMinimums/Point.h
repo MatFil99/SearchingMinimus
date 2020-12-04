@@ -9,10 +9,11 @@
 
 
 class Point {
+    public:
     VectorN * point;
     double value;
 
-public:
+
     Point( Point const &pPoint);
     Point();
     Point(VectorN vectorN, double val);
@@ -22,7 +23,7 @@ public:
     VectorN* getPointPointer()const { return point; }
     Point& operator=(const Point & pPoint);
     bool operator==(const Point & point);
-    bool isNull();
+    bool isNull() const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Point& dt);
