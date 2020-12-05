@@ -75,24 +75,25 @@ int main(int argc, char* argv[])
         VectorN v(2, tab);
         Point min(v, val);
 
+        std::cout << "Funkcja: " << uPar.function <<"\n";
+        std::cout << "divider " << uPar.divider <<";\t";
+        std::cout << "leaving_minimum " << uPar.leaving_minimum <<"\t";
+        std::cout << "precision_optimum " << uPar.precision_optimum <<"\t";
+        std::cout << "start_beta "<< uPar.start_beta <<"\t";
+        std::cout << "acceptable_estimation "<< uPar.acceptable_estimation <<"\t";
+        std::cout << "start_point " << uPar.vec <<"\n\n";
+
         Algorithm algorithm(uPar.function, uPar.divider, uPar.leaving_minimum, uPar.precision_optimum, uPar.start_beta, uPar.acceptable_estimation, uPar.dim_of_vec);
         algorithm.searchAllMinimums(uPar.vec);
         Point min_found = algorithm.getFoundOptimum();
-        std::cout << min_found;
+        std::cout << min_found << "\n";
         // std::cout << (min_found.getVectorN()-min.getVectorN()).getNorm() << "\n";
         // std::cout << std::abs(min.getValue-min_found.getValue);
         // std::cout << algorithm.getMinList().getListMin().size();
     }
 
 
-    // std::cout << uPar.function <<"\n";
-    // std::cout << uPar.divider <<"\n";
-    // std::cout << uPar.leaving_minimum <<"\n";
-    // std::cout << uPar.precision_optimum <<"\n";
-    // std::cout << uPar.start_beta <<"\n";
-    // std::cout << uPar.acceptable_estimation <<"\n";
-    // std::cout << uPar.vec <<"\n";
-    // std::cout << uPar.dim_of_vec <<"\n";
+    
 
 
 // -----
