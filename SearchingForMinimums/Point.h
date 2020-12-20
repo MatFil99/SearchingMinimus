@@ -13,6 +13,7 @@ class Point {
     VectorN * point;
     double value;
 
+    const double ACCEPTABLE_ESTIMATION = 0.005; // oszacowanie, czy punkty mozna uznac za ten sam
 
     Point( Point const &pPoint);
     Point();

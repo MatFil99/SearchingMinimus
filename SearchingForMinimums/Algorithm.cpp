@@ -39,7 +39,10 @@ double derivative(Function& function, VectorN point, VectorN direction, double s
 }
 
 Point Algorithm::searchOneMinimum(VectorN start) {
-    start = leaveMaxArea(start);
+    
+    // VectorN direction_leaving(start.getSize());
+    // direction_leaving.setNVal(0,1);
+    // start = leaveMaxArea(start, direction_leaving);
     VectorN gradient = function.getGradient(start), prev(start);
     double stepLength = START_BETA;
     unsigned int count = 0;
@@ -50,7 +53,7 @@ Point Algorithm::searchOneMinimum(VectorN start) {
         gradient = function.getGradient(start);
         ++count;
     }
-    if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po setnym kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znajdziemy minimum
+    if (count >= MAX_ITERATIONS && !ifMinimum(start)) {// przyjmujemy, ze jesli po MAX_ITERATIONS kroku nie uzyskalismy gradientu zerowego (bliskiego 0) to nie znalezlismy minimum
         return Point();
     }
     return Point(start, function.getValue(start));
@@ -81,31 +84,30 @@ VectorN Algorithm::goToMaximum(VectorN start, VectorN direction, double stepLeng
     while ((step.getNorm() > PRECISION_OPTIMUM/2 || derivative(function, start+step,direction,PRECISION_DERIVATIVE)>=0) && count < LIMIT_ITERATIONS) { // tutaj dodalem warunek pochodnej
         if ( derivative(function, start+step, direction, PRECISION_DERIVATIVE) < 0 ){
             step = step.multiply(0.5);
-            // i nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
+            // nie idz kroku do przodu - zrob mniejszy krok lub zakoncz szukanie
         }else {
             start = start + step;
         }
         ++count;
     }
     if(count == LIMIT_ITERATIONS) {
-        return VectorN();
+        return VectorN();// zwroc pusty
     }
     return start ;
 }
 
-VectorN Algorithm::leaveMaxArea(VectorN point ) { // zwraca wektor z wartosciami 0 - gdy dany jest to kierunkowe min i 1 gdy dany kierunek nie jest minimum
+// funkcja idzie w roznych kierunkach starajac sie opuscic maksimum, powinien natomiast minac maksimum (znajdowane bylo w danym kierunku, wiec mijamy je idac w tym samym kierunku)
+VectorN Algorithm::leaveMaxArea( VectorN point, VectorN direction ) { // zwraca wektor z wartosciami 0 - gdy dany punkt jest to kierunkowe min
     VectorN result(point), nextPoint(point.getSize()), prevPoint(point.getSize());
     unsigned int n = 0;
     double step = START_BETA, deriv=0;
-    for (int i =0; i<point.getSize(); ++i){
-        VectorN direction(point.getSize());
-        direction.setNVal(i, 1);
+ 
+    deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
+    while( deriv > -PRECISION_OPTIMUM && n++<LEAVE_MAXIMUM_AREA_ITERATIONS){
         deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
-        while( deriv > -PRECISION_OPTIMUM && deriv<=0 && n++<LEAVE_MAXIMUM_AREA_ITERATIONS){
-            deriv = derivative(function, result, direction, PRECISION_DERIVATIVE );
-            result = result + direction.multiply(step);
-        }
+        result = result + direction.multiply(step);
     }
+
     return result;
 }
 
@@ -132,16 +134,18 @@ void Algorithm::leaveMinimum(VectorN start) {
         direction.setNVal(i, 1);
         max = goToMaximum(start, direction, stepLength);
         if(!max.isNull()) {
-            max = leaveMaxArea(max);
+            max = leaveMaxArea(max, direction);
             minList.addMinimumToList(searchOneMinimum(max));
-            direction.setNVal(i, -1);
         }
+        direction = direction.multiply(-1);
         max = goToMaximum(start, direction, stepLength);
+        
         if(!max.isNull()) {
-            max = leaveMaxArea(max);
+            max = leaveMaxArea(max, direction);
             minList.addMinimumToList(searchOneMinimum(max));
         }
     }
+    
 }
 
 
@@ -154,10 +158,16 @@ void Algorithm::searchAllMinimums(VectorN start) {
     }
     Point minimum = searchOneMinimum(start);
     minList.addMinimumToList(minimum);
+
     while (n < minList.getListMin().size() && n < LEAVING_LIMIT) {
         leaveMinimum(minList.getListMin().at(n).getVectorN());
         ++n;
     }
+
+    // minList.printList();
+
+    // std::cout << "\n Znalezione minimum\n";
+
 }
 
 VectorN Algorithm::randomStartPoint(VectorN point, int rangeLength){

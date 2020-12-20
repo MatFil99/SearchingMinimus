@@ -12,7 +12,7 @@ public:
 //    int limitIterations = 1000000; // maksymalna liczba prob poszukiwania minimum
 
     unsigned int LIMIT_ITERATIONS = 100000;               // maksymalna liczba iteracji w poszukiwaniu optimum kierunkowego
-    unsigned int MAX_ITERATIONS = 20;                     // maksymalna liczba wykonanych minimalizacji kierunkowych - zygzakow
+    unsigned int MAX_ITERATIONS = 30;                     // maksymalna liczba wykonanych minimalizacji kierunkowych - zygzakow
     unsigned int LEAVE_MAXIMUM_AREA_ITERATIONS = 20;      // maksymalna liczba iteracji, podczas opuszczania maksimum
     unsigned int LEAVE_MINIMUM_AREA_ITERATIONS = 1000;    // maksymalna liczba iteracji opuszczania obszaru minimum
     unsigned int BETA_DIVIDER = 4;
@@ -36,9 +36,11 @@ public:
     void leaveMinimum(VectorN start);
     MinimumsList getMinList(){ return minList; }
 
-    VectorN leaveMaxArea(VectorN point);
+    VectorN leaveMaxArea(VectorN point, VectorN direction);
 
     Point getFoundOptimum();
+
+    const double PRECISION_LEAVING_MAXIMUM = 0.01;
 };
 
 double derivative(Function& function, VectorN point, VectorN direction, double stepLength );

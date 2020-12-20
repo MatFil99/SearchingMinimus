@@ -73,11 +73,16 @@ double VectorN::getNorm() {
 bool VectorN::operator==(const VectorN &v) const {
     
     for(int i=0; i<v.getSize(); i++){
+        
         if(!this->roundEquals(v, i, ACCEPTABLEDEVIATION)){// accaptabledeviation could adopt, but now it is constant
             return false;
         }
     }
     return true;
+}
+
+bool VectorN::roundEquals(const VectorN & v, int n, double acceptableDeviation) const {
+    return std::abs(this->getNVal(n) - v.getNVal(n)) < acceptableDeviation; // check if it throw exception?
 }
 
 VectorN& VectorN::operator=(const VectorN &v) {
@@ -94,10 +99,6 @@ VectorN& VectorN::operator=(const VectorN &v) {
         }
     }
     return *this;
-}
-
-bool VectorN::roundEquals(const VectorN & v, int n, double acceptableDeviation) const {
-    return std::abs(this->getNVal(n) - v.getNVal(n)) < acceptableDeviation; // check if it throw exception?
 }
 
 VectorN VectorN::operator+(const VectorN &v) const {

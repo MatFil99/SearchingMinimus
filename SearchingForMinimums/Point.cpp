@@ -2,7 +2,7 @@
 
 
 bool Point::operator==(const Point &point) {
-    return this->getVectorN()==point.getValue() && this->getValue()==point.getValue();
+    return this->getVectorN()==point.getVectorN() && abs(this->getValue()-point.getValue())<=ACCEPTABLE_ESTIMATION;
 }
 
 Point::Point(VectorN vectorN, double val) {

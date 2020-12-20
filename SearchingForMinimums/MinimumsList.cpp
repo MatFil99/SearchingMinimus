@@ -8,7 +8,7 @@ int MinimumsList::exists(Point point ) {
     // check if point exist in list
     int exist = -1;
     for(unsigned int i=0; i<listMin.size() && exist==-1; ++i) {
-        if (listMin.at(i) == point) exist = i;
+        if (listMin.at(i) == point) {exist = (int)i; break; };
     }
     return exist;
 }
@@ -16,12 +16,13 @@ int MinimumsList::exists(Point point ) {
 void MinimumsList::addMinimumToList(Point point) {
     if ( point.isNull()) { return; }
     int index = this->exists(point);
+    
     if(index!=-1){
         if( point.getValue()<listMin.at(index).getValue() ){
             listMin.at(index) = point;
         }
          // minimum exists, not adding
-    }{
+    }else{
         Point p(point);
         listMin.push_back(p);
     }
