@@ -22,6 +22,7 @@ UserParameters readUserArguments(int &argc, char* argv[]){
     struct UserParameters uPar;
     std::stringstream arg;
 
+
     for( int i=1; i<argc && i<7; ++i ){
         arg << argv[i];
         switch(i) {
@@ -45,7 +46,7 @@ UserParameters readUserArguments(int &argc, char* argv[]){
         }
         arg.clear();
     }
-    uPar.dim_of_vec = argc - 7;
+    uPar.dim_of_vec = std::max(argc - 7, 0);
     double *tab = new double[uPar.dim_of_vec];
     for(int i = 7; i<argc; ++i ){
         arg << argv[i];
@@ -58,7 +59,8 @@ UserParameters readUserArguments(int &argc, char* argv[]){
     return uPar;
 }
 
-bool correctParameters(struct UserParameters uPar){
+bool correctParameters(int argc, struct UserParameters uPar){
+    if(argc<7){ return false; }
     if(uPar.divider==0 || uPar.leaving_minimum==0 || uPar.precision_optimum==0 || uPar.start_beta==0 || uPar.acceptable_estimation==0){
         return false;
     }
@@ -69,7 +71,7 @@ int main(int argc, char* argv[])
 {
     struct UserParameters uPar=readUserArguments(argc, argv);
 
-    if (correctParameters(uPar)){
+    if (correctParameters(argc, uPar)){
         double tab[2] = { 0, 0 };
         double val = 0;
         VectorN v(2, tab);
@@ -90,6 +92,13 @@ int main(int argc, char* argv[])
         // std::cout << (min_found.getVectorN()-min.getVectorN()).getNorm() << "\n";
         // std::cout << std::abs(min.getValue-min_found.getValue);
         // std::cout << algorithm.getMinList().getListMin().size();
+    }else{
+        std::cout << "Wrong parameters\n\n";
+        std::cout << "Scheme of call:\n";
+        std::cout << "./Search \"function\" divider leaving_minimum precision_optimum start_beta acceptable_estimation start_point\n";
+
+        std::cout << "Example:\n";
+        std::cout << "./Search \"20+x^2-10*cos(2*3.14*x)+y^2-10*cos(2*3.14*y)\" 10 400 0.005 0.159 0.001 5 3\n";
     }
 
 
